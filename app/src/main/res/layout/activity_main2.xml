@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
+        android:id="@+id/textInputLUsuario"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -38,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Usuario" />
@@ -49,12 +50,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Contraseña"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+        app:layout_constraintEnd_toEndOf="@+id/textInputLUsuario"
+        app:layout_constraintStart_toStartOf="@+id/textInputLUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLUsuario" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
+        android:id="@+id/textInputLPass"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -66,6 +67,7 @@
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
@@ -78,16 +80,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Registrarse"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+        app:layout_constraintEnd_toEndOf="@+id/textInputLPass"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLPass" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btIniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="INICIAR"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+        app:layout_constraintStart_toStartOf="@+id/textInputLPass"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLPass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

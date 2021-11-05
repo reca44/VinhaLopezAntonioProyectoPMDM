@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                 commit()
             }
 
-
           //  val editor = sharedPref.edit()
             //editor.putInt("", 1)
 

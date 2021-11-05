@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -31,8 +32,19 @@ class MainActivity2 : AppCompatActivity() {
         textIpassLogin=findViewById(R.id.inputPass)
             val sharedPref =getPreferences(MODE_PRIVATE)
            // val defaultValue = resources.getString(R.integer.saved_high_score_default_key)
+
             val highScore = sharedPref.getString("Usuario", "")
-            textIUsuario.setText(highScore)
+            val highScore2 = sharedPref.getString("Password", "")
+            if (highScore.equals(textIUsuario.text.toString())&&
+                highScore2.equals(textIpassLogin.text.toString())){
+                Toast.makeText(this,"Datos correctos",Toast.LENGTH_SHORT).show()
+
+
+            }else{
+                Toast.makeText(this,"Error,datos mal",Toast.LENGTH_SHORT).show()
+               // textIUsuario.setText(highScore)
+               // textIpassLogin.setText(highScore2)
+            }
         }
 
     }

@@ -12,12 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VinaLopezAntonioProyectoPMDM">
         <activity
-            android:name=".activities.registro"
+            android:name=".activities.RegistroActivity"
             android:exported="true"
-            android:parentActivityName=".activities.login"
+            android:parentActivityName=".activities.LoginActivity"
             />
         <activity
-            android:name=".activities.login"
+            android:name=".activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.ListaPeliculasActivity" />
     </application>
 
 </manifest>

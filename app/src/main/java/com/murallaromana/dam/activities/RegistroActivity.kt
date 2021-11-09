@@ -7,7 +7,7 @@ import android.widget.Button
 import com.google.android.material.textfield.TextInputEditText
 import com.murallaromana.dam.R
 
-class registro : AppCompatActivity() {
+class RegistroActivity : AppCompatActivity() {
     private lateinit var btRegistrarse:Button
     private  lateinit var textIUsuario: TextInputEditText
     private  lateinit var textPass: TextInputEditText

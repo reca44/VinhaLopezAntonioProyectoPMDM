@@ -1,3 +1,10 @@
 <resources>
+    <!--Etiquetas-->
     <string name="app_name">vinaLopezAntonioProyectoPMDM</string>
+    <!--hints-->
+    <string name="hint_introducir_nombre">Nombre</string>
+
+    <!--Acciones-->
+
+    <!--Nombres de pantallas-->
 </resources>

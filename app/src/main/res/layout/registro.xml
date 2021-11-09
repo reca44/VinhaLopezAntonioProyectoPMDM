@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.login">
+    tools:context=".activities.LoginActivity">
 
     <TextView
         android:id="@+id/textView2"
@@ -31,7 +31,7 @@
         android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_vertical_entre_editText"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -41,14 +41,14 @@
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre" />
+            android:hint="@string/hint_introducir_nombre" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_vertical_entre_editText"
         android:text="Contraseña"
         app:layout_constraintEnd_toEndOf="@+id/textIUsuario"
         app:layout_constraintStart_toStartOf="@+id/textIUsuario"
@@ -59,7 +59,7 @@
         android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_vertical_entre_editText"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -78,7 +78,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_vertical_entre_editText"
         android:text="E-mail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +89,7 @@
         android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_vertical_entre_editText"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -117,7 +117,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_vertical_entre_editText"
         android:text="Direccion"
         app:layout_constraintEnd_toEndOf="@+id/textIMail"
         app:layout_constraintStart_toStartOf="@+id/textIMail"

@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import com.murallaromana.dam.R
 
-class login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     private lateinit var btRegistrarse: Button
     private lateinit var btIniciar: Button
     private  lateinit var textIUsuario: TextInputEditText
@@ -20,7 +20,7 @@ class login : AppCompatActivity() {
         btIniciar=findViewById(R.id.btIniciar)
         btRegistrarse.setOnClickListener {
             Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, registro::class.java)
+            val intent= Intent(this, RegistroActivity::class.java)
             startActivity(intent)
     }
 
@@ -43,7 +43,7 @@ class login : AppCompatActivity() {
 //               // textIpassLogin.setText(highScore2)
 //            }
             Toast.makeText(this, "Listado", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, registro::class.java)
+            val intent= Intent(this, ListaPeliculasActivity::class.java)
             startActivity(intent)
         }
 

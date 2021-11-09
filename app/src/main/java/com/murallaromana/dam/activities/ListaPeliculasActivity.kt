@@ -3,19 +3,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murallaromana.dam.adapters.ListaPersonajesAdapter
+import com.murallaromana.dam.databinding.ActivityListaPeliculasBinding
 import com.murallaromana.dam.model.entities.Personaje
 import com.murallaromana.dam.model.data.PersonajesDaoMockImpl
 
 
-class lista : AppCompatActivity() {
+class ListaPeliculasActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityListaPeliculasBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //  setContentView(R.layout.activity_main)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityListaPeliculasBinding.inflate(layoutInflater)
         setContentView(binding.root)
     //obtenemos datos
         val personajesDao = PersonajesDaoMockImpl()

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--margenes y padings-->
+    <dimen name="margen_activity_default_horizontal">16dp</dimen>
+    <dimen name="margen_activity_default_vertical">16dp</dimen>
+
+    <!--imagenes-->
+    <dimen name="imagen_lista_personaje_tamano">120dp</dimen>
+    <dimen name="margin_vertical_entre_editText">8dp</dimen>
+</resources>

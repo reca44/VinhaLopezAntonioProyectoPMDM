@@ -46,6 +46,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="10dp"
             android:layout_height="wrap_content"
             android:hint="Introduce tu usuario"
             />
@@ -80,6 +82,8 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:hint="Introduce tu contraseña"
+            android:drawableStart="@drawable/candadopass"
+            android:drawablePadding="10dp"
             android:inputType="textPassword"
             app:boxBackgroundColor="@android:color/transparent"
 

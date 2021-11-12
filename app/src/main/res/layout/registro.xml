@@ -41,6 +41,8 @@
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="10dp"
             android:hint="@string/hint_introducir_nombre" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,6 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
+            android:drawableStart="@drawable/candadopass"
+            android:drawablePadding="10dp"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,6 +104,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="E-mail"
+            android:drawableStart="@drawable/mail"
+            android:drawablePadding="10dp"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,6 +144,8 @@
             android:id="@+id/inputDireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/direccion"
+            android:drawablePadding="10dp"
             android:hint="Direccion" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,6 +175,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Telefono"
+            android:drawableStart="@drawable/telefono"
+            android:drawablePadding="10dp"
             android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 

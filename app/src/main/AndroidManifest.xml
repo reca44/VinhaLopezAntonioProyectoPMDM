@@ -15,7 +15,7 @@
             android:name=".activities.detallesActivity"
             android:label="Informacion pelicula"
             android:exported="true"
-            android:parentActivityName=".activities.LoginActivity" />
+            android:parentActivityName=".activities.ListaPeliculasActivity" />
         <activity
             android:name=".activities.RegistroActivity"
             android:label="Registro"

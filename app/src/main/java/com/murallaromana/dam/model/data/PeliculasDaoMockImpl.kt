@@ -34,6 +34,12 @@ class PeliculasDaoMockImpl : PeliculasDao {
             "DeadPool Regresa",
             "Comedia",
             "https://es.web.img3.acsta.net/pictures/15/12/04/10/48/099822.jpg"
+        ),       Pelicula(
+            0,
+            "DeadPool_otra",
+            "DeadPool proba2",
+            "Comedia",
+            "https://es.web.img3.acsta.net/pictures/15/12/04/10/48/099822.jpg"
         )
     )
 }

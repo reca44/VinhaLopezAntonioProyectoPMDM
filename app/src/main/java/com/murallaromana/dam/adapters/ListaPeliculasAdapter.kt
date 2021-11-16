@@ -18,7 +18,6 @@ class ListaPeliculasAdapter(val peliculas: List<Pelicula>):RecyclerView.Adapter<
         val ivFoto=itemView.findViewById<ImageView>(R.id.ivFoto)
         val tvGenero=itemView.findViewById<TextView>(R.id.tvGenero)
         //val tvUrl=itemView.findViewById<TextView>(R.id.tvUrl)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonajesViewHolder {

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:attr/selectableItemBackground"
-    >
+
+    app:layout_marginBaseline="@dimen/cardview_default_elevation">
 
     <ImageView
         android:id="@+id/ivFoto"

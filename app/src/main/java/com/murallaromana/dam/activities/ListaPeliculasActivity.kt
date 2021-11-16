@@ -6,6 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.murallaromana.dam.adapters.ListaPeliculasAdapter
 import com.murallaromana.dam.databinding.ActivityListaPeliculasBinding
 import com.murallaromana.dam.model.data.PeliculasDaoMockImpl
+import androidx.recyclerview.widget.DividerItemDecoration
+
+
+
 
 
 class ListaPeliculasActivity : AppCompatActivity() {
@@ -29,6 +33,10 @@ class ListaPeliculasActivity : AppCompatActivity() {
         binding.rvListaPersonajes.adapter=adapter
         binding.rvListaPersonajes.layoutManager=layoutManager
         binding.rvListaPersonajes.setHasFixedSize(true)
+
+        val divider = DividerItemDecoration(binding.rvListaPersonajes.context, layoutManager.orientation)
+        binding.rvListaPersonajes.addItemDecoration(divider)
+
 
         binding.fBoton.setOnClickListener{
             val intent = Intent(this, detallesActivity::class.java)

@@ -30,12 +30,12 @@ class ListaPeliculasActivity : AppCompatActivity() {
         val adapter = ListaPeliculasAdapter(listaPeliculas)
 
         //asociamos el recyclesview con sus componentes
-        binding.rvListaPersonajes.adapter=adapter
-        binding.rvListaPersonajes.layoutManager=layoutManager
-        binding.rvListaPersonajes.setHasFixedSize(true)
+        binding.rvListaPeliculas.adapter=adapter
+        binding.rvListaPeliculas.layoutManager=layoutManager
+        binding.rvListaPeliculas.setHasFixedSize(true)
 
-        val divider = DividerItemDecoration(binding.rvListaPersonajes.context, layoutManager.orientation)
-        binding.rvListaPersonajes.addItemDecoration(divider)
+        val divider = DividerItemDecoration(binding.rvListaPeliculas.context, layoutManager.orientation)
+        binding.rvListaPeliculas.addItemDecoration(divider)
 
 
         binding.fBoton.setOnClickListener{

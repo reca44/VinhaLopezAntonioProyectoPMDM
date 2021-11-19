@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
 //               // textIUsuario.setText(highScore)
 //               // textIpassLogin.setText(highScore2)
 //            }
-            Toast.makeText(this, "Listado", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "listado", Toast.LENGTH_SHORT).show()
             val intent= Intent(this, ListaPeliculasActivity::class.java)
             startActivity(intent)
         }

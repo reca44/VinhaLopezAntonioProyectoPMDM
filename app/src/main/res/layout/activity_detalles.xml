@@ -43,8 +43,8 @@
                 android:id="@+id/tvTituloDetalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
                 android:hint="Titulo"
+                android:enabled="false"
                 android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,8 +65,9 @@
                 android:id="@+id/tGenero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Genero"
                 android:enabled="false"
-                android:hint="Genero" />
+                android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

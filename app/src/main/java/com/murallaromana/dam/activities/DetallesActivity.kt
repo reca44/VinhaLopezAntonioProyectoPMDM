@@ -13,7 +13,11 @@ import com.squareup.picasso.Picasso
 
 class DetallesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetallesBinding
-    private lateinit var infoPelicula:Pelicula
+    companion object{
+        lateinit var infoPelicula:Pelicula
+        lateinit var itemGuardar:MenuItem
+        lateinit var itemEditar:MenuItem
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,25 +27,28 @@ class DetallesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         infoPelicula=intent.extras?.get("pelicula") as Pelicula
-        binding.tGenero.setText(infoPelicula.genero)
-        binding.tNombreComun.setText(infoPelicula.nombreComun)
-        binding.tvTituloDetalle.setText(infoPelicula.titulo)
-        binding.tvUrl.setText(infoPelicula.url)
-        binding.tNota.setText(infoPelicula.puntuacion.toString())
-        Picasso.get().load(infoPelicula.url).into(binding.tvImagen)
-        if (infoPelicula != null) setTitle(infoPelicula.titulo)
+        if (infoPelicula != null){
+            setTitle(infoPelicula.titulo)
+            binding.tGenero.setText(infoPelicula.genero)
+            binding.tNombreComun.setText(infoPelicula.nombreComun)
+            binding.tvTituloDetalle.setText(infoPelicula.titulo)
+            binding.tvUrl.setText(infoPelicula.url)
+            binding.tNota.setText(infoPelicula.puntuacion.toString())
+            Picasso.get().load(infoPelicula.url).into(binding.tvImagen)
+        }
         else setTitle("nueva pelicula")
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_detalle_pelicula, menu)
+        itemGuardar= menu?.findItem(R.id.action_guardar)!!
+        itemEditar= menu?.findItem(R.id.action_editar)!!
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_editar) {
+
             //cambio los campos a editables
             binding.tvTituloDetalle.isEnabled = true
             binding.tvUrl.isEnabled = true
@@ -49,15 +56,18 @@ class DetallesActivity : AppCompatActivity() {
             binding.tNota.isEnabled = true
             binding.tNombreComun.isEnabled = true
 
-            Toast.makeText(this, "Pelicula guardada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Pantalla de edición", Toast.LENGTH_SHORT).show()
 
             val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-            val dialog = builder.setTitle("Guardar pelicula")
-                .setMessage("estas a punto de guardar la pelicula "+infoPelicula.titulo+"¿Estas seguro?.")
+            val dialog = builder.setTitle("Editar Pelicula")
+                .setMessage("¿Deseas editar la pelicula "+infoPelicula.titulo+"?.")
                 .setPositiveButton("Aceptar", null)
                 .setNegativeButton("Cancelar", null)
                 .create()
+            itemGuardar.isVisible = true
+            itemEditar.isVisible = false
             dialog.show()
+
 
             return true
         } else if (item.itemId == R.id.action_borrar) {

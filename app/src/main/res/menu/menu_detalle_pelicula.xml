@@ -14,5 +14,13 @@
         android:icon="@drawable/eliminar"
         android:title="Eliminar"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_guardar"
+        android:orderInCategory="299"
+        android:icon="@drawable/guardar"
+        android:title="Eliminar"
+        app:showAsAction="ifRoom"
+        android:visible="false"/>
+
 
 </menu>

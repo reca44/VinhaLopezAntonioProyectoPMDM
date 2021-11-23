@@ -15,7 +15,9 @@
             android:name=".activities.DetallesActivity"
             android:label="Informacion pelicula"
             android:exported="true"
-            android:parentActivityName=".activities.ListaPeliculasActivity" />
+            android:parentActivityName=".activities.ListaPeliculasActivity"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".activities.RegistroActivity"
             android:label="Registro"

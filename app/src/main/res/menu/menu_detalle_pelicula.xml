@@ -3,8 +3,8 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_guardar"
-        android:icon="@drawable/check"
+        android:id="@+id/action_editar"
+        android:icon="@drawable/editar"
         android:orderInCategory="300"
         android:title="Guardar"
         app:showAsAction="ifRoom" />

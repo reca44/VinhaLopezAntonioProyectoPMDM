@@ -16,7 +16,7 @@ class RegistroActivity : AppCompatActivity() {
     private  lateinit var textTelefono: TextInputEditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.registro)
+        setContentView(R.layout.activity_registro)
         btRegistrarse=findViewById(R.id.btRegistrarse)
         btRegistrarse.setOnClickListener {onBackPressed()
 

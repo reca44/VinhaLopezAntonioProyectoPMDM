@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.textfield.TextInputEditText
 import com.murallaromana.dam.R
 
@@ -15,7 +16,9 @@ class LoginActivity : AppCompatActivity() {
     private  lateinit var textIpassLogin: TextInputEditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+        setContentView(R.layout.activity_login)
         btRegistrarse = findViewById(R.id.Registrarse)
         btIniciar=findViewById(R.id.btIniciar)
         btRegistrarse.setOnClickListener {

@@ -15,11 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="LOGIN"
-        android:textColor="@color/purple_500"
+        android:text="ECA FILMS"
+        android:textColor="@color/reca"
         android:textSize="34sp"
         android:textStyle="bold"
+        android:translationZ="2dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,27 +40,26 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLUsuario"
-        android:layout_width="390dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:boxBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-        app:boxBackgroundColor="@android:color/transparent"
-        android:background="@android:color/transparent"
-        >
+        app:startIconDrawable="@drawable/ic_baseline_person_24"
+        app:startIconTint="@color/purple_500"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
-            android:drawableStart="@drawable/ic_baseline_person_24"
-            android:drawablePadding="10dp"
             android:layout_height="wrap_content"
-            android:hint="Introduce tu usuario"
-            />
+            android:drawablePadding="10dp"
+            android:hint="Introduce tu usuario" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -74,12 +75,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLPass"
-        android:layout_width="390dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:startIconDrawable="@drawable/candadopass"
+        app:startIconTint="@color/purple_500"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:passwordToggleEnabled="true">
@@ -90,9 +93,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:hint="Introduce tu contraseña"
-            android:drawableStart="@drawable/candadopass"
             android:drawablePadding="10dp"
+            android:hint="Introduce tu contraseña"
             android:inputType="textPassword"
             app:boxBackgroundColor="@android:color/transparent"
 
@@ -116,6 +118,19 @@
         android:text="INICIAR"
         app:layout_constraintStart_toStartOf="@+id/textInputLPass"
         app:layout_constraintTop_toBottomOf="@+id/textInputLPass" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="62dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="159dp"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:srcCompat="@drawable/recafilms" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

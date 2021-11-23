@@ -6,13 +6,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Login"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/recafilms"
+        android:label="RecaFilms"
+        android:roundIcon="@mipmap/recafilms"
         android:supportsRtl="true"
         android:theme="@style/Theme.VinaLopezAntonioProyectoPMDM">
         <activity
-            android:name=".activities.detallesActivity"
+            android:name=".activities.DetallesActivity"
             android:label="Informacion pelicula"
             android:exported="true"
             android:parentActivityName=".activities.ListaPeliculasActivity" />
@@ -23,7 +23,9 @@
             android:parentActivityName=".activities.LoginActivity" />
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Login">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

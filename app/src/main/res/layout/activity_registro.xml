@@ -15,8 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="REGISTRO"
-        android:textColor="@color/purple_500"
+        android:text="ECA FILMS"
+        android:textColor="@color/reca"
+        android:translationZ="2dp"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -36,11 +37,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIUsuario"
-        android:layout_width="390dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/margin_vertical_entre_editText"
+        android:background="@android:color/transparent"
+        app:boxBackgroundColor="@android:color/transparent"
         android:layout_marginEnd="16dp"
+        app:startIconDrawable="@drawable/ic_baseline_person_24"
+        app:startIconTint="@color/purple_500"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -49,7 +54,6 @@
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="10dp"
             android:hint="@string/hint_introducir_nombre" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -67,7 +71,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIContrasena"
-        android:layout_width="390dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/margin_vertical_entre_editText"
@@ -75,15 +79,18 @@
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:startIconDrawable="@drawable/candadopass"
+        app:startIconTint="@color/purple_500"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPass"
             android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            app:boxBackgroundColor="@android:color/transparent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:drawableStart="@drawable/candadopass"
             android:drawablePadding="10dp"
+            android:hint="Contraseña"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,11 +107,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIMail"
-        android:layout_width="390dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="@dimen/margin_vertical_entre_editText"
         android:layout_marginEnd="16dp"
+        app:startIconDrawable="@drawable/mail"
+        app:startIconTint="@color/purple_500"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -113,9 +122,10 @@
             android:id="@+id/inputMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-mail"
-            android:drawableStart="@drawable/mail"
+            android:background="@android:color/transparent"
+            app:boxBackgroundColor="@android:color/transparent"
             android:drawablePadding="10dp"
+            android:hint="E-mail"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -142,11 +152,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIDireccion"
-        android:layout_width="390dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:boxBackgroundColor="@android:color/transparent"
+        app:startIconDrawable="@drawable/direccion"
+        app:startIconTint="@color/purple_500"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8">
@@ -155,7 +169,6 @@
             android:id="@+id/inputDireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/direccion"
             android:drawablePadding="10dp"
             android:hint="Direccion" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -173,11 +186,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tITelefono"
-        android:layout_width="390dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:boxBackgroundColor="@android:color/transparent"
         android:layout_marginEnd="16dp"
+        app:startIconDrawable="@drawable/telefono"
+        app:startIconTint="@color/purple_500"
         app:layout_constraintEnd_toEndOf="@+id/textView9"
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView9">
@@ -186,11 +203,20 @@
             android:id="@+id/inputTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telefono"
-            android:drawableStart="@drawable/telefono"
             android:drawablePadding="10dp"
+            android:hint="Telefono"
             android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="62dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="159dp"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:srcCompat="@drawable/recafilms" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

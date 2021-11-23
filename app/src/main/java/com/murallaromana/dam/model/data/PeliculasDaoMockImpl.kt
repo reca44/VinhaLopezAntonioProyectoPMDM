@@ -8,34 +8,46 @@ class PeliculasDaoMockImpl : PeliculasDao {
 
     override fun getTodos() = listOf(
         Pelicula(
-            0,
+            10.0,
             "tucker",
             "tucker y dale contra el mal",
             "absurda",
             "https://es.web.img3.acsta.net/medias/nmedia/18/89/43/26/20046420.jpg"
         ),
         Pelicula(
-            0,
+            6.0,
             "Venom",
             "Venom el animal",
             "Accion",
             "https://es.web.img3.acsta.net/c_310_420/pictures/21/08/31/16/41/4145554.jpg"
         ),
         Pelicula(
-            0,
+            9.5,
             "Solo en casa ",
             "Solo en casa 3",
             "Comedia",
             "https://m.media-amazon.com/images/I/51HXbOkZ44L.jpg"
         ),
         Pelicula(
-            0,
+            7.4,
             "DeadPool",
             "DeadPool Regresa",
             "Comedia",
             "https://es.web.img3.acsta.net/pictures/15/12/04/10/48/099822.jpg"
-        ),       Pelicula(
-            0,
+        ), Pelicula(
+            6.2,
+            "DeadPool_otra",
+            "DeadPool proba2",
+            "Comedia",
+            "https://es.web.img3.acsta.net/pictures/15/12/04/10/48/099822.jpg"
+        ), Pelicula(
+            7.2,
+            "DeadPool_otra",
+            "DeadPool proba2",
+            "Comedia",
+            "https://es.web.img3.acsta.net/pictures/15/12/04/10/48/099822.jpg"
+        ), Pelicula(
+            8.2,
             "DeadPool_otra",
             "DeadPool proba2",
             "Comedia",

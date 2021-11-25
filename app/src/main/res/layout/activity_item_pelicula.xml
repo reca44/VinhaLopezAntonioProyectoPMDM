@@ -40,7 +40,8 @@
         android:id="@+id/labelTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:text="Titulo:"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/ivFoto"
@@ -50,19 +51,19 @@
         android:id="@+id/labelGenero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         android:text="Genero:"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/ivFoto"
         app:layout_constraintTop_toBottomOf="@+id/labelTitulo" />
 
     <TextView
-        android:id="@+id/labelNota"
+        android:id="@+id/labelDirector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Nota:"
+        android:layout_marginTop="16dp"
+        android:text="Director:"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/labelGenero"
         app:layout_constraintHorizontal_bias="0.0"
@@ -73,11 +74,22 @@
         android:id="@+id/tvNota"
         android:layout_width="83dp"
         android:layout_height="36dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
         android:text="TextView"
+        android:textColor="@color/reca"
         android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="@+id/tvGenero"
-        app:layout_constraintTop_toBottomOf="@+id/tvGenero" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvGenero"
+        app:layout_constraintTop_toTopOf="@+id/tvTitulo" />
+
+    <TextView
+        android:id="@+id/tvDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/labelDirector"
+        app:layout_constraintTop_toTopOf="@+id/labelDirector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

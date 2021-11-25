@@ -3,50 +3,44 @@ package com.murallaromana.dam.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import com.google.android.material.textfield.TextInputEditText
 import com.murallaromana.dam.R
+import com.murallaromana.dam.databinding.ActivityLoginBinding
+import com.murallaromana.dam.model.data.SharePreferences
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var btRegistrarse: Button
-    private lateinit var btIniciar: Button
-    private  lateinit var textIUsuario: TextInputEditText
-    private  lateinit var textIpassLogin: TextInputEditText
+    private lateinit var binding: ActivityLoginBinding
+    companion object{
+        lateinit var preferences: SharePreferences
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        setContentView(R.layout.activity_login)
-        btRegistrarse = findViewById(R.id.Registrarse)
-        btIniciar=findViewById(R.id.btIniciar)
-        btRegistrarse.setOnClickListener {
+        title="Login"
+        preferences= SharePreferences(applicationContext)
+        binding= ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        //setContentView(R.layout.activity_login)
+        binding.btIniciar.setOnClickListener {
+/*            val usuario= preferences.recuperar("email") comentado para probas
+            val pass= preferences.recuperar("pass")
+
+            if (!usuario.equals(binding.inputUsuario.text.toString().trim())){
+                binding.inputUsuario.error="Usuario incorrecto"
+            }else if (!pass.equals(binding.inputPass.text.toString().trim())){
+                binding.inputPass.error="Contraseña incorrecta"
+            }else{*/
+                val intent= Intent(this, ListaPeliculasActivity::class.java)
+                startActivity(intent)
+            }
+    //}
+        binding.Registrarse.setOnClickListener{
             Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show()
             val intent= Intent(this, RegistroActivity::class.java)
-            startActivity(intent)
-    }
-
-        btIniciar.setOnClickListener{
-        textIUsuario=findViewById(R.id.inputUsuario)
-        textIpassLogin=findViewById(R.id.inputPass)
-//            val sharedPref =getPreferences(MODE_PRIVATE)
-//           // val defaultValue = resources.getString(R.integer.saved_high_score_default_key)
-//
-//            val highScore = sharedPref.getString("Usuario", "")
-//            val highScore2 = sharedPref.getString("Password", "")
-//            if (highScore.equals(textIUsuario.text.toString())&&
-//                highScore2.equals(textIpassLogin.text.toString())){
-//                Toast.makeText(this,"Datos correctos",Toast.LENGTH_SHORT).show()
-//
-//
-//            }else{
-//                Toast.makeText(this,"Error,datos mal",Toast.LENGTH_SHORT).show()
-//               // textIUsuario.setText(highScore)
-//               // textIpassLogin.setText(highScore2)
-//            }
-            //Toast.makeText(this, "listado", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, ListaPeliculasActivity::class.java)
             startActivity(intent)
         }
 

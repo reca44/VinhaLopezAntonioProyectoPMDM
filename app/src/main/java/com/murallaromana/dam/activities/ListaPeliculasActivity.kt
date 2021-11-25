@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murallaromana.dam.adapters.ListaPeliculasAdapter
-import com.murallaromana.dam.databinding.ActivityListaPeliculasBinding
 import com.murallaromana.dam.model.data.PeliculasDaoMockImpl
 import androidx.recyclerview.widget.DividerItemDecoration
-
-
-
+import com.murallaromana.dam.App.Companion.peliculas
+import com.murallaromana.dam.databinding.ActivityListaPeliculasBinding
 
 
 class ListaPeliculasActivity : AppCompatActivity() {
@@ -27,7 +25,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
         val listaPeliculas = peliculasDao.getTodos()
     //creamos componentes
         val layoutManager = LinearLayoutManager(this)
-        val adapter = ListaPeliculasAdapter(listaPeliculas)
+        val adapter = ListaPeliculasAdapter(listaPeliculas,this)
 
         //asociamos el recyclesview con sus componentes
         binding.rvListaPeliculas.adapter=adapter
@@ -43,5 +41,11 @@ class ListaPeliculasActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val adapter=ListaPeliculasAdapter(peliculas , this)
+        binding.rvListaPeliculas.adapter=adapter
     }
 }

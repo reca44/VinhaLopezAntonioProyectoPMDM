@@ -1,4 +1,5 @@
 package com.murallaromana.dam.adapters
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -11,13 +12,13 @@ import com.murallaromana.dam.activities.DetallesActivity
 import com.murallaromana.dam.model.entities.Pelicula
 import com.squareup.picasso.Picasso
 
-class ListaPeliculasAdapter(val peliculas: List<Pelicula>):RecyclerView.Adapter<ListaPeliculasAdapter.PeliculasViewHolder>() {
+class ListaPeliculasAdapter(private val peliculas: List<Pelicula>,val context: Context):RecyclerView.Adapter<ListaPeliculasAdapter.PeliculasViewHolder>() {
 
     class PeliculasViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
         val tvTitulo=itemView.findViewById<TextView>(R.id.tvTitulo)
         val ivFoto=itemView.findViewById<ImageView>(R.id.ivFoto)
         val tvGenero=itemView.findViewById<TextView>(R.id.tvGenero)
-        //val tvUrl=itemView.findViewById<TextView>(R.id.tvUrl)
+        val tvDirector=itemView.findViewById<TextView>(R.id.tvDirector)
         val tvNota=itemView.findViewById<TextView>(R.id.tvNota)
     }
 
@@ -32,6 +33,7 @@ class ListaPeliculasAdapter(val peliculas: List<Pelicula>):RecyclerView.Adapter<
         holder.tvTitulo.setText(pelicula.titulo)
         holder.tvGenero.setText(pelicula.genero)
         holder.tvNota.setText(pelicula.puntuacion.toString())
+        holder.tvDirector.setText(pelicula.director)
         Picasso.get().isLoggingEnabled = true
         Picasso.get().load(pelicula.url).into(holder.ivFoto)
 

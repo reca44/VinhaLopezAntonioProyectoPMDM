@@ -19,12 +19,12 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //  setContentView(R.layout.activity_main)
+
 
         binding = ActivityListaPeliculasBinding.inflate(layoutInflater)
         setContentView(binding.root)
     //obtenemos datos
-        //val peliculasDao = PeliculasDaoMockImpl()
+
         val listaPeliculas = App.peliculas
     //creamos componentes
         val layoutManager = LinearLayoutManager(this)

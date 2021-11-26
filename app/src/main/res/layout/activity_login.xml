@@ -25,67 +25,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="E-mail"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-
-        />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLUsuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/margen_activity_default_vertical"
         android:background="@android:color/transparent"
         app:boxBackgroundColor="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:startIconDrawable="@drawable/ic_baseline_person_24"
-        app:startIconTint="@color/purple_500"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:startIconDrawable="@drawable/mail"
+        app:startIconTint="@color/purple_500">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="10dp"
-            android:hint="Introduce E-mail" />
+            android:hint="Introduce tu E-mail" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Contraseña"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLUsuario"
-        app:layout_constraintStart_toStartOf="@+id/textInputLUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLUsuario" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLPass"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLUsuario"
+        app:layout_constraintStart_toStartOf="@+id/textInputLUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLUsuario"
+        app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/candadopass"
-        app:startIconTint="@color/purple_500"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:passwordToggleEnabled="true">
+        app:startIconTint="@color/purple_500">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPass"
@@ -95,6 +66,7 @@
             android:background="@android:color/transparent"
             android:drawablePadding="10dp"
             android:hint="Introduce tu contraseña"
+            android:layout_marginTop="@dimen/margen_activity_default_vertical"
             android:inputType="textPassword"
             app:boxBackgroundColor="@android:color/transparent"
 

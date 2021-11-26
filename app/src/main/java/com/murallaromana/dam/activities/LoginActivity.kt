@@ -11,7 +11,8 @@ import com.murallaromana.dam.model.data.SharePreferences
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    companion object{
+
+    companion object {
         lateinit var preferences: SharePreferences
     }
 
@@ -19,28 +20,28 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        title="Login"
-        preferences= SharePreferences(applicationContext)
-        binding= ActivityLoginBinding.inflate(layoutInflater)
+        title = "Login"
+        preferences = SharePreferences(applicationContext)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //setContentView(R.layout.activity_login)
-        binding.btIniciar.setOnClickListener {
-/*            val usuario= preferences.recuperar("email") comentado para probas
-            val pass= preferences.recuperar("pass")
 
-            if (!usuario.equals(binding.inputUsuario.text.toString().trim())){
-                binding.inputUsuario.error="Usuario incorrecto"
-            }else if (!pass.equals(binding.inputPass.text.toString().trim())){
-                binding.inputPass.error="Contraseña incorrecta"
-            }else{*/
-                val intent= Intent(this, ListaPeliculasActivity::class.java)
+        binding.btIniciar.setOnClickListener {
+//            val usuario = preferences.recuperar("email")
+//            val pass = preferences.recuperar("pass")
+//
+//            if (!usuario.equals(binding.inputUsuario.text.toString().trim())) {
+//                binding.inputUsuario.error = "Usuario incorrecto"
+//            } else if (!pass.equals(binding.inputPass.text.toString().trim())) {
+//                binding.inputPass.error = "Contraseña incorrecta"
+//            } else {
+                val intent = Intent(this, ListaPeliculasActivity::class.java)
                 startActivity(intent)
-            }
-    //}
-        binding.Registrarse.setOnClickListener{
+//            }
+        }
+        binding.Registrarse.setOnClickListener {
             Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show()
-            val intent= Intent(this, RegistroActivity::class.java)
+            val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
 

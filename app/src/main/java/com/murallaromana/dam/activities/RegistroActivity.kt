@@ -1,13 +1,12 @@
 package com.murallaromana.dam.activities
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import com.murallaromana.dam.R
-import com.murallaromana.dam.databinding.ActivityRegistroBinding
 import com.murallaromana.dam.activities.LoginActivity.Companion.preferences
+import com.murallaromana.dam.databinding.ActivityRegistroBinding
 import java.util.regex.Pattern
 
 class RegistroActivity : AppCompatActivity() {
@@ -63,25 +62,4 @@ class RegistroActivity : AppCompatActivity() {
         return true
     }
 }
-
-
-/*
-                textIUsuario=findViewById(R.id.inputUsuario)
-        textPass=findViewById(R.id.inputPass)
-        textMail=findViewById(R.id.inputMail)
-        textDireccion=findViewById(R.id.inputDireccion)
-        textTelefono=findViewById(R.id.inputTelefono)
-
-            val sharedPref = getPreferences(Context.MODE_PRIVATE)
-            with (sharedPref.edit()) {
-                putString("Usuario", textIUsuario.text.toString())
-                putString("Password", textPass.text.toString())
-                putString("E-mail", textMail.text.toString())
-                putString("Direccion", textDireccion.text.toString())
-                putString("Telefono", textTelefono.text.toString())
-                commit()
-            }
-
-          //  val editor = sharedPref.edit()
-            //editor.putInt("", 1)*/
 

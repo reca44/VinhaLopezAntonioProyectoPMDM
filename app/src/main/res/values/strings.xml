@@ -2,7 +2,8 @@
     <!--Etiquetas-->
     <string name="app_name">vinaLopezAntonioProyectoPMDM</string>
     <!--hints-->
-    <string name="hint_introducir_nombre">Nombre</string>
+    <string name="hint_introducir_nombre">Nombre y apellidos</string>
+    <string name="hint_introducir_mail">Introduce tu E-mail</string>
 
     <!--Acciones-->
 

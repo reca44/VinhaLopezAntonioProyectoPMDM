@@ -29,7 +29,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
+            android:id="@+id/textITitulo"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -49,7 +49,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/textIGenero"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -57,7 +57,7 @@
             android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textITitulo"
             android:background="@android:color/transparent"
             app:boxBackgroundColor="@android:color/transparent">
 
@@ -71,18 +71,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout3"
+            android:id="@+id/textDirector"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textIGenero"
             android:background="@android:color/transparent"
             app:boxBackgroundColor="@android:color/transparent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tNombreComun"
+                android:id="@+id/tDirector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Director"
@@ -91,13 +91,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout4"
+            android:id="@+id/textIUrl"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/textDirector"
             android:background="@android:color/transparent"
             app:boxBackgroundColor="@android:color/transparent">
 
@@ -111,22 +111,24 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textINota"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            app:boxBackgroundColor="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
-            android:background="@android:color/transparent"
-            app:boxBackgroundColor="@android:color/transparent">
+            app:layout_constraintTop_toBottomOf="@+id/textIUrl">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tNota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nota"
                 android:enabled="false"
-                android:textColor="@color/black"/>
+                android:hint="Nota"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

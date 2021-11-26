@@ -7,7 +7,7 @@ import com.murallaromana.dam.model.entities.data.PeliculasDao
 class PeliculasDaoMockImpl : PeliculasDao {
 
     override fun getTodos(): ArrayList<Pelicula> {
-        val lista = ArrayList<Pelicula>()
+        val lista: ArrayList<Pelicula> = ArrayList()
         lista.addAll(
             listOf(
                 Pelicula(
@@ -61,43 +61,3 @@ class PeliculasDaoMockImpl : PeliculasDao {
         return lista
     }
 }
-
-
-/*      Otra forma de hacerlo
-        return listOf(
-            Personaje(
-                0,
-                "jonh",
-                "nieve",
-                "pringao",
-                "bastardo",
-                "https://thronesapi.com/assets/images/jon-snow.jpg"
-            ),
-            Personaje(
-                0,
-                "Daenerys",
-                "dragonera",
-                "pringao",
-                "bastardo",
-                "https://thronesapi.com/assets/images/daenerys.jpg"
-            ),
-            Personaje(
-                0,
-                "Arya ",
-                "Stark",
-                "jefa",
-                "stark",
-                "https://thronesapi.com/assets/images/arya-stark.jpg"
-            ),
-            Personaje(
-                0,
-                "Brandon",
-                "Stark",
-                "amish",
-                "Stark",
-                "https://thronesapi.com/assets/images/bran-stark.jpg"
-            )
-        )
-
-    }
-}*/

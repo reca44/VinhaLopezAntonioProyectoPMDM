@@ -8,6 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/recafilms"
         android:label="RecaFilms"
+        android:name=".App"
         android:roundIcon="@mipmap/recafilms"
         android:supportsRtl="true"
         android:theme="@style/Theme.VinaLopezAntonioProyectoPMDM">

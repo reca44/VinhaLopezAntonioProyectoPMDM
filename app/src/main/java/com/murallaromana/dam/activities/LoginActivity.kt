@@ -28,17 +28,17 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.btIniciar.setOnClickListener {
-//            val usuario = preferences.recuperar("email")
-//            val pass = preferences.recuperar("pass")
-//
-//            if (!usuario.equals(binding.inputUsuario.text.toString().trim())) {
-//                binding.inputUsuario.error = "Usuario incorrecto"
-//            } else if (!pass.equals(binding.inputPass.text.toString().trim())) {
-//                binding.inputPass.error = "Contraseña incorrecta"
-//            } else {
+            val usuario = preferences.recuperar("email")
+            val pass = preferences.recuperar("pass")
+
+            if (!usuario.equals(binding.inputUsuario.text.toString().trim())) {
+                binding.inputUsuario.error = "Usuario incorrecto"
+            } else if (!pass.equals(binding.inputPass.text.toString().trim())) {
+                binding.inputPass.error = "Contraseña incorrecta"
+            } else {
                 val intent = Intent(this, ListaPeliculasActivity::class.java)
                 startActivity(intent)
-//            }
+            }
         }
         binding.Registrarse.setOnClickListener {
             Toast.makeText(this, "Registro", Toast.LENGTH_SHORT).show()

@@ -7,15 +7,15 @@
     android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".activities.LoginActivity">
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="ECA FILMS"
+        android:layout_marginTop="@dimen/margen_activity_default_horizontal"
+        android:text="@string/name_ecafilms"
         android:textColor="@color/reca"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -28,7 +28,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLUsuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/layout_width_default"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margen_activity_default_vertical"
         android:background="@android:color/transparent"
@@ -43,13 +43,13 @@
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
-            android:hint="Introduce tu E-mail" />
+            android:drawablePadding="@dimen/pading_iconos_default"
+            android:hint="@string/hint_introducir_mail" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLPass"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/layout_width_default"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/textInputLUsuario"
         app:layout_constraintStart_toStartOf="@+id/textInputLUsuario"
@@ -64,8 +64,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:drawablePadding="10dp"
-            android:hint="Introduce tu contraseña"
+            android:drawablePadding="@dimen/pading_iconos_default"
+            android:hint="@string/hint_introducir_pass3"
             android:layout_marginTop="@dimen/margen_activity_default_vertical"
             android:inputType="textPassword"
             app:boxBackgroundColor="@android:color/transparent"
@@ -77,8 +77,8 @@
         android:id="@+id/Registrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Registrarse"
+        android:layout_marginTop="@dimen/margen_activity_default_horizontal"
+        android:text="@string/btnRegistrarse"
         app:layout_constraintEnd_toEndOf="@+id/textInputLPass"
         app:layout_constraintTop_toBottomOf="@+id/textInputLPass" />
 
@@ -86,8 +86,8 @@
         android:id="@+id/btIniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="INICIAR"
+        android:layout_marginTop="@dimen/margen_activity_default_horizontal"
+        android:text="@string/btnIniciar"
         app:layout_constraintStart_toStartOf="@+id/textInputLPass"
         app:layout_constraintTop_toBottomOf="@+id/textInputLPass" />
 
@@ -100,7 +100,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
-        app:srcCompat="@drawable/recafilms" />
+        app:srcCompat="@drawable/recafilms"
+        android:contentDescription="@string/name_ecafilms" />
 
 
 

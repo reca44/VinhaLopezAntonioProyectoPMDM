@@ -11,7 +11,8 @@
         android:name=".App"
         android:roundIcon="@mipmap/recafilms"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VinaLopezAntonioProyectoPMDM">
+        android:theme="@style/Theme.VinaLopezAntonioProyectoPMDM"
+        android:fullBackupContent="@xml/backup_descriptor">
         <activity
             android:name=".activities.DetallesActivity"
             android:label="Informacion pelicula"
@@ -28,7 +29,6 @@
             android:name=".activities.LoginActivity"
             android:exported="true"
             android:label="Recafilms">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

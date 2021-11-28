@@ -3,9 +3,17 @@
     <!--margenes y padings-->
     <dimen name="margen_activity_default_horizontal">16dp</dimen>
     <dimen name="margen_activity_default_vertical">16dp</dimen>
+    <dimen name="pading_iconos_default">10dp</dimen>
+    <dimen name="layout_width_default">350dp</dimen>
+    <dimen name="layout_width_default_detalle">300dp</dimen>
+    <dimen name="layout_height_default_detalle">300dp</dimen>
+    <dimen name="layout_marginStart_default_item">4dp</dimen>
+    <dimen name="layout_marginTop_default_item">8dp</dimen>
+    <dimen name="layout_height_default_item">20dp</dimen>
 
     <!--imagenes-->
     <dimen name="imagen_lista_personaje_tamano">120dp</dimen>
     <dimen name="margin_vertical_entre_editText">8dp</dimen>
+    <dimen name="margin_layout">24dp</dimen>
 
 </resources>

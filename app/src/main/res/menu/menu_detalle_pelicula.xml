@@ -6,27 +6,26 @@
         android:id="@+id/action_editar"
         android:icon="@drawable/editar"
         android:orderInCategory="300"
-        android:title="Guardar"
+        android:title="@string/editar"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_borrar"
         android:icon="@drawable/eliminar"
         android:orderInCategory="300"
-        android:title="Eliminar"
+        android:title="@string/eliminar"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_guardar"
         android:icon="@drawable/guardar"
         android:orderInCategory="299"
-        android:title="Eliminar"
+        android:title="@string/guardar"
         android:visible="false"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_llamar"
-        android:icon="@drawable/"
+        android:icon="@drawable/whatsapp_foreground"
         android:orderInCategory="280"
-        android:title="Eliminar"
-        android:visible="false"
+        android:title="@string/llamar"
         app:showAsAction="ifRoom" />
 
 

@@ -7,15 +7,15 @@
     android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".activities.LoginActivity">
 
     <TextView
         android:id="@+id/ecaFilms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="ECA FILMS"
+        android:layout_marginTop="@dimen/margen_activity_default_horizontal"
+        android:text="@string/name_ecafilms"
         android:textColor="@color/reca"
         android:translationZ="2dp"
         android:textSize="34sp"
@@ -26,7 +26,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIUsuario"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/layout_width_default"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margen_activity_default_vertical"
         android:background="@android:color/transparent"
@@ -41,13 +41,13 @@
             android:id="@+id/inputUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
+            android:drawablePadding="@dimen/pading_iconos_default"
             android:hint="@string/hint_introducir_nombre" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIContrasena"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/layout_width_default"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/textIMail"
         app:layout_constraintTop_toBottomOf="@+id/textIMail"
@@ -61,15 +61,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:drawablePadding="10dp"
-            android:hint="Contraseña"
+            android:drawablePadding="@dimen/pading_iconos_default"
+            android:hint="@string/hint_introducir_pass"
             android:inputType="textPassword"
             app:boxBackgroundColor="@android:color/transparent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIpass2"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/layout_width_default"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         app:boxBackgroundColor="@android:color/transparent"
@@ -84,8 +84,8 @@
             android:id="@+id/inputpass2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
-            android:hint="Repetir Contraseña"
+            android:drawablePadding="@dimen/pading_iconos_default"
+            android:hint="@string/hint_introducir_pass2"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,28 +94,28 @@
         android:id="@+id/btRegistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Registrarse"
+        android:layout_marginTop="@dimen/margen_activity_default_horizontal"
+        android:text="@string/btnRegistrarse"
         app:layout_constraintEnd_toEndOf="@+id/tITelefono"
         app:layout_constraintStart_toStartOf="@+id/tITelefono"
         app:layout_constraintTop_toBottomOf="@+id/tITelefono" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIMail"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/layout_width_default"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/textIUsuario"
         app:layout_constraintTop_toBottomOf="@+id/textIUsuario"
         app:startIconDrawable="@drawable/mail"
-        app:startIconTint="@color/purple_500">
+        app:startIconTint="@color/design_default_color_primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:drawablePadding="10dp"
-            android:hint="E-mail"
+            android:drawablePadding="@dimen/pading_iconos_default"
+            android:hint="@string/hint_introducir_mail2"
             android:inputType="textEmailAddress"
             android:layout_marginTop="@dimen/margen_activity_default_vertical"
             app:boxBackgroundColor="@android:color/transparent" />
@@ -123,7 +123,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tITelefono"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/layout_width_default"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         app:boxBackgroundColor="@android:color/transparent"
@@ -137,8 +137,8 @@
             android:id="@+id/inputTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawablePadding="10dp"
-            android:hint="Telefono"
+            android:drawablePadding="@dimen/pading_iconos_default"
+            android:hint="@string/hint_introducir_telefono"
             android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
     <ImageView
@@ -150,7 +150,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/ecaFilms"
         app:layout_constraintEnd_toEndOf="@+id/ecaFilms"
         app:layout_constraintTop_toTopOf="@+id/ecaFilms"
-        app:srcCompat="@drawable/recafilms" />
+        app:srcCompat="@drawable/recafilms"
+        android:contentDescription="@string/name_ecafilms" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

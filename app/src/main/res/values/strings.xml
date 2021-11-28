@@ -1,11 +1,32 @@
 <resources>
     <!--Etiquetas-->
     <string name="app_name">vinaLopezAntonioProyectoPMDM</string>
+    <string name="name_ecafilms">ECA FILMS</string>
+
     <!--hints-->
     <string name="hint_introducir_nombre">Nombre y apellidos</string>
     <string name="hint_introducir_mail">Introduce tu E-mail</string>
+    <string name="hint_introducir_mail2">E-mail</string>
+    <string name="hint_introducir_pass">Contraseña</string>
+    <string name="hint_introducir_pass2">Repetir Contraseña</string>
+    <string name="hint_introducir_pass3">Introduce tu contraseña</string>
+    <string name="hint_introducir_telefono">Telefono</string>
+    <string name="genero">Genero</string>
+    <string name="nota">Nota</string>
+    <string name="url">URL de la imagen</string>
+    <string name="director">Director</string>
+    <string name="titulo">Titulo</string>
+    <string name="imagen_perfil">imagen perfil</string>
+    <string name="defecto">TextView</string>
 
-    <!--Acciones-->
+    <!--Acciones boton-->
+    <string name="btnRegistrarse">Registrarse</string>
+    <string name="btnIniciar">Iniciar</string>
+    <string name="boton_llamar">boton llamar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="guardar">Guardar</string>
+    <string name="llamar">llamar</string>
 
-    <!--Nombres de pantallas-->
+
 </resources>

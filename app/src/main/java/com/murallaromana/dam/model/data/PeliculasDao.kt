@@ -1,4 +1,4 @@
-package com.murallaromana.dam.model.entities.data
+package com.murallaromana.dam.model.data
 
 
 import com.murallaromana.dam.model.entities.Pelicula

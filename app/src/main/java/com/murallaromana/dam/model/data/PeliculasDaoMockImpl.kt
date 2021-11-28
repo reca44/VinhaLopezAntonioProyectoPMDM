@@ -1,7 +1,6 @@
 package com.murallaromana.dam.model.data
 
 import com.murallaromana.dam.model.entities.Pelicula
-import com.murallaromana.dam.model.entities.data.PeliculasDao
 
 
 class PeliculasDaoMockImpl : PeliculasDao {

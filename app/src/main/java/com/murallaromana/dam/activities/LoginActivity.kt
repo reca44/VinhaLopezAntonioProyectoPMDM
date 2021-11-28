@@ -1,11 +1,11 @@
 package com.murallaromana.dam.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import com.murallaromana.dam.R
 import com.murallaromana.dam.databinding.ActivityLoginBinding
 import com.murallaromana.dam.model.data.SharePreferences
 
@@ -13,6 +13,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         lateinit var preferences: SharePreferences
     }
 

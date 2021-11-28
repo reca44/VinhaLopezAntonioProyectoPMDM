@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ListaPeliculasActivity"
-    android:padding="16dp">
+    android:padding="@dimen/margen_activity_default_horizontal">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_lista_peliculas"
@@ -26,6 +26,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_add"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/boton_llamar"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

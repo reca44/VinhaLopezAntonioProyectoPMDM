@@ -2,14 +2,10 @@ package com.murallaromana.dam.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murallaromana.dam.adapters.ListaPeliculasAdapter
-import com.murallaromana.dam.model.data.PeliculasDaoMockImpl
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.murallaromana.dam.App
 import com.murallaromana.dam.App.Companion.peliculas
-import com.murallaromana.dam.R
 import com.murallaromana.dam.databinding.ActivityListaPeliculasBinding
 
 
@@ -25,7 +21,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
         setContentView(binding.root)
     //obtenemos datos
 
-        val listaPeliculas = App.peliculas
+        val listaPeliculas = peliculas
     //creamos componentes
         val layoutManager = LinearLayoutManager(this)
         val adapter = ListaPeliculasAdapter(listaPeliculas,this)
@@ -42,6 +38,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
         binding.fBoton.setOnClickListener{
             val intent = Intent(binding.root.context, DetallesActivity::class.java)
             startActivity(intent)
+
 
         }
 

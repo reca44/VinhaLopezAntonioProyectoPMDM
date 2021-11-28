@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Etiquetas-->
     <string name="app_name">vinaLopezAntonioProyectoPMDM</string>
+    <string name="name_ecafilms">ECA FILMS</string>
+    <!--hints-->
     <string name="hint_introducir_nombre">Nome e apelidos</string>
     <string name="hint_introducir_mail">Enderezo Electronico</string>
+    <string name="hint_introducir_mail2">E-mail</string>
+    <string name="hint_introducir_pass">Contrasinal</string>
+    <string name="hint_introducir_pass2">Repetir Contrasinal</string>
+    <string name="hint_introducir_pass3">Introduce tu contraseña</string>
+    <string name="hint_introducir_telefono">Teléfono</string>
+    <string name="genero">xenero</string>
+    <string name="nota">Nota</string>
+    <string name="url">URL da imaxen</string>
+    <string name="director">Director</string>
+    <string name="imagen_perfil">imaxe perfil</string>
+    <string name="defecto">TextView</string>
+    <!--Acciones boton-->
+    <string name="btnRegistrarse">Rexistrarse</string>
+    <string name="btnIniciar">Iniciar</string>
+    <string name="titulo">Titulo</string>
+    <string name="boton_llamar">boton llamar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="guardar">Guardar</string>
+    <string name="llamar">llamar</string>
+
 </resources>

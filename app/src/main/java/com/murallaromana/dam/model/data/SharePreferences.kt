@@ -11,7 +11,6 @@ class SharePreferences(val context: Context) {
 
         preferences.edit().putString("email", email.trim()).apply()
         preferences.edit().putString("pass", pass.trim()).apply()
-
     }
 
     fun recuperar(datoARecuperar: String): String? {

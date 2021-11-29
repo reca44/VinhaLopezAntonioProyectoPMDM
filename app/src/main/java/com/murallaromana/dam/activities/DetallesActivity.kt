@@ -25,7 +25,7 @@ class DetallesActivity : AppCompatActivity() {
         var itemGuardar: MenuItem? = null
         var itemEditar: MenuItem? = null
         var itemBorrar: MenuItem? = null
-        var intemwhatsapp: MenuItem?=null
+        var intemwhatsapp: MenuItem? = null
     }
 
 
@@ -72,7 +72,7 @@ class DetallesActivity : AppCompatActivity() {
             itemGuardar = menu.findItem(R.id.action_guardar)
             itemBorrar = menu.findItem(R.id.action_borrar)
             itemEditar = menu.findItem(R.id.action_editar)
-            intemwhatsapp=menu.findItem(R.id.action_llamar)
+            intemwhatsapp = menu.findItem(R.id.action_llamar)
 
         }
         return true
@@ -83,13 +83,13 @@ class DetallesActivity : AppCompatActivity() {
             itemEditar?.isVisible = true
             itemGuardar?.isVisible = false
             itemBorrar?.isVisible = true
-            intemwhatsapp?.isVisible=true
+            intemwhatsapp?.isVisible = true
         } else {
             itemEditar?.isVisible = false
             itemGuardar?.isVisible = true
             itemBorrar?.isVisible = false
             intemwhatsapp?.isVisible = false
-            binding.btnLlamar.isVisible=false
+            binding.btnLlamar.isVisible = false
         }
         return true
     }
@@ -128,17 +128,17 @@ class DetallesActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_guardar -> {
+
                 if (binding.tNota.text.toString().isEmpty() || binding.tDirector.text.toString()
                         .isEmpty() || binding.tDirector.text.toString().isEmpty()
                     || binding.tvTituloDetalle.text.toString()
                         .isEmpty() || binding.tGenero.text.toString()
                         .isEmpty() || binding.tvUrl.text.toString().isEmpty()
                 ) {
-
-
                     if (binding.tvTituloDetalle.text.toString().isEmpty()) {
                         binding.tvTituloDetalle.error = "El campo titulo no puede estar vacio"
                     }
+
                     if (binding.tNota.text.toString().isEmpty()) {
                         binding.tNota.error = "El campo nota no puede estar vacio"
                     }
@@ -151,8 +151,10 @@ class DetallesActivity : AppCompatActivity() {
                     if (binding.tvUrl.text.toString().isEmpty()) {
                         binding.tvUrl.error = "El campo URL no puede estar vacio"
                     }
+                } else if (binding.tNota.text.toString().toDouble() > 10) {
+                    binding.tNota.error = "La nota tiene que estar entre 0 y 10"
                 } else {
-                    val peliculaCreada= Pelicula(
+                    val peliculaCreada = Pelicula(
                         binding.tNota.text.toString(),
                         binding.tDirector.text.toString(),
                         binding.tvTituloDetalle.text.toString(),
@@ -174,21 +176,22 @@ class DetallesActivity : AppCompatActivity() {
             }
             R.id.action_llamar -> {
                 try {
-                    val intent=Intent(Intent.ACTION_SEND)
-                    intent.type="text/plain"
-                    intent.putExtra(Intent.EXTRA_TEXT,"Te recomiendo que veas la pelicula: "+binding.tvTituloDetalle.text.toString()+"." +
-                            "\n Registrate en la App RecaFilms para mas info: \n"+ binding.tvUrl.text.toString())
-                    intent.`package`="com.whatsapp"
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.type = "text/plain"
+                    intent.putExtra(
+                        Intent.EXTRA_TEXT,
+                        "Te recomiendo que veas la pelicula: " + binding.tvTituloDetalle.text.toString() + "." +
+                                "\n Registrate en la App RecaFilms para mas info: \n" + binding.tvUrl.text.toString()
+                    )
+                    intent.`package` = "com.whatsapp"
                     startActivity(intent)
-                }catch (exp: Exception){
+                } catch (exp: Exception) {
                     Toast.makeText(
                         this,
                         "Whatsapp no está instalado",
-                        Toast.LENGTH_LONG).show()
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
-
-
-
                 return true
             }
             else -> {
@@ -196,6 +199,4 @@ class DetallesActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }

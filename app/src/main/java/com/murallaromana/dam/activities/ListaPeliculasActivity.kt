@@ -38,10 +38,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
         binding.fBoton.setOnClickListener{
             val intent = Intent(binding.root.context, DetallesActivity::class.java)
             startActivity(intent)
-
-
         }
-
     }
 
 

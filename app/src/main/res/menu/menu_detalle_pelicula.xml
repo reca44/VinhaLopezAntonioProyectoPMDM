@@ -25,8 +25,6 @@
         android:id="@+id/action_llamar"
         android:icon="@drawable/whatsapp_foreground"
         android:orderInCategory="280"
-        android:title="@string/llamar"
+        android:title="@string/whatsapp"
         app:showAsAction="ifRoom" />
-
-
 </menu>

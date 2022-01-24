@@ -2,7 +2,7 @@
 ## Descripción General
 ###### Proyecto Realizado en la asignatura de programacion de dispositivos moviles (2ºDAM).
 
-La aplicación gestiona un listado de peliculas, en la cual puedes consultar, añadir o eliminar
+###### La aplicación gestiona un listado de peliculas, en la cual puedes consultar, añadir o eliminar
 peliculas y su información.
 
 ## Pantallas
@@ -14,3 +14,14 @@ un nuevo usuario y así poder acceder al listado de peliculas.
 ![Pantalla Login](imagenes/login.PNG)
 
 ### Pantalla de Registro
+
+En la siguiente imagen podemos observar la tipica pantalla de Registro,
+la cual realiza las correspondientes validaciones:
+
+  - Comprobar que ambas contraseñas son iguales
+  - Comproba que las contraseñas cumplen unos requisitos minimos
+  - Comprobar que el e-mail introducido es válido
+  - En el apartado "Telefono comprobar" que solo se insertan números.
+
+![Pantalla Registro](imagenes/registro.PNG)
+

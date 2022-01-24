@@ -25,3 +25,17 @@ la cual realiza las correspondientes validaciones:
 
 ![Pantalla Registro](imagenes/registro.PNG)
 
+### Pantalla de Listado de Peliculas
+
+Una vez conseguimos Logearnos en nuestra app, podemos observar un listado de peliculas.
+En esta pantalla tendremos las siguientes funcionalidades:
+  - Ver los datos principales de cada película.
+  - Al pulsar en cada película nos llevara a una pantalla con todos los detalles de dicha película.
+  - En la parte inferior tenemos un boton en el cual podremos añadir una nueva película al listado.
+![Listado_peliculas](imagenes/listado_peliculas.PNG)
+
+### Pantalla Detalle
+
+En la siguiente imagen podemos observar todos los detalles de la película seleccionada, así como
+realizar las siguientes acciones:
+

@@ -12,3 +12,5 @@ al listado de peliculas, en caso contrario tendriamos que pulsar en el boton "Re
 un nuevo usuario y así poder acceder al listado de peliculas.
 
 ![Pantalla Login](imagenes/login.PNG)
+
+### Pantalla de Registro

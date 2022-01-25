@@ -3,7 +3,7 @@
 ###### Proyecto Realizado en la asignatura de programacion de dispositivos moviles (2ºDAM).
 
 ###### La aplicación gestiona un listado de peliculas, en la cual puedes consultar, añadir o eliminar
-peliculas y su información.
+###### peliculas y su información.
 
 ## Pantallas
 ### Pantalla de Login
@@ -32,6 +32,7 @@ En esta pantalla tendremos las siguientes funcionalidades:
   - Ver los datos principales de cada película.
   - Al pulsar en cada película nos llevara a una pantalla con todos los detalles de dicha película.
   - En la parte inferior tenemos un boton en el cual podremos añadir una nueva película al listado.
+
 ![Listado_peliculas](imagenes/listado_peliculas.PNG)
 
 ### Pantalla Detalle

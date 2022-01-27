@@ -4,10 +4,18 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import com.murallaromana.dam.RetrofitClient
 import com.murallaromana.dam.databinding.ActivityLoginBinding
 import com.murallaromana.dam.model.data.SharePreferences
+import com.murallaromana.dam.model.entities.Pelicula
+import com.murallaromana.dam.model.entities.Token
+import com.murallaromana.dam.model.entities.Usuario
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -21,12 +29,30 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
+        val u = Usuario("mi@email.com","1234")
+        val loginCall= RetrofitClient.apiRetrofit.login(u)
+        val login=this
+        loginCall.enqueue(object : Callback<Token>{
+            override fun onFailure(call: Call<Token>, t: Throwable) {
+                Log.d("Fallo autenticacion", t.toString())
+
+            }
+            override fun onResponse(call: Call<Token>, response: Response<Token>) {
+                Log.d("respuesta: onResponse", response.toString())
+                if (response.code()>299 || response.code()<200){
+                    Toast.makeText(login, "Error, no se ha podido crear el usuario", Toast.LENGTH_SHORT)
+                        .show()
+                }else{
+                    val token=response.body()?.token
+                    Log.d("respuesta: token:", token.orEmpty())
+                    Toast.makeText(login, "Usuario creado correctamente", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }})
         title = "Login"
        // preferences = SharePreferences(applicationContext)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         binding.btIniciar.setOnClickListener {
           //  val usuario = preferences.recuperar("email")
             //val pass = preferences.recuperar("pass")
@@ -45,6 +71,5 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
-
+        }
     }
-}

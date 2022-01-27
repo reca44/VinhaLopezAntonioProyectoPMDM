@@ -51,7 +51,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
                 Log.d("prueba",t.message.toString())
             }
-
         })
 
         binding.fBoton.setOnClickListener{

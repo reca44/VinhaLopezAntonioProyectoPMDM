@@ -18,14 +18,3 @@ object RetrofitClient {
     val apiRetrofit = getRetrofit().create(Api::class.java)
 }
 
-/*    @Synchronized
-    fun getInstance(): RetrofitClient? {
-        if (instance == null) {
-            instance = ClienteRetrofit()
-        }
-        return instance
-    }
-
-    fun getMyApi(): Api? {
-        return myApi
-    }*/

@@ -33,20 +33,20 @@
             android:id="@+id/textITitulo"
             android:layout_width="@dimen/layout_width_default"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_layout"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            app:boxBackgroundColor="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvImagen"
-            android:background="@android:color/transparent"
-            app:boxBackgroundColor="@android:color/transparent">
+            app:layout_constraintTop_toBottomOf="@+id/tvImagen">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tvTituloDetalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/titulo"
                 android:enabled="false"
-                android:textColor="@color/black"/>
+                android:hint="@string/titulo"
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -75,7 +75,7 @@
             android:id="@+id/textDirector"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margen_activity_default_vertical"
+            android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
             app:boxBackgroundColor="@android:color/transparent"
             app:layout_constraintStart_toStartOf="@+id/textIGenero"
@@ -94,12 +94,12 @@
             android:id="@+id/textIUrl"
             android:layout_width="@dimen/layout_width_default"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margen_activity_default_vertical"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/holo_purple"
+            app:boxBackgroundColor="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDirector"
-            android:background="@android:color/holo_purple"
-            app:boxBackgroundColor="@android:color/transparent">
+            app:layout_constraintTop_toBottomOf="@+id/textDirector">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tvUrl"
@@ -107,14 +107,14 @@
                 android:layout_height="wrap_content"
                 android:enabled="false"
                 android:hint="@string/url"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textINota"
             android:layout_width="@dimen/layout_width_default"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margen_activity_default_vertical"
+            android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
             app:boxBackgroundColor="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -129,6 +129,29 @@
                 android:hint="@string/nota"
                 android:inputType="numberDecimal"
                 android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textMinutos"
+            android:layout_width="@dimen/layout_width_default"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textINota"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tMinutos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="@string/minutos"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

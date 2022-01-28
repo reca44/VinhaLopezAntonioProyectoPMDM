@@ -1,13 +1,21 @@
 package com.murallaromana.dam.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import com.murallaromana.dam.R
+import com.murallaromana.dam.RetrofitClient
 import com.murallaromana.dam.activities.LoginActivity.Companion.preferences
 import com.murallaromana.dam.databinding.ActivityRegistroBinding
+import com.murallaromana.dam.model.entities.Token
+import com.murallaromana.dam.model.entities.Usuario
+import retrofit2.Call
+import retrofit2.Response
 import java.util.regex.Pattern
+import retrofit2.Callback
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -19,19 +27,40 @@ class RegistroActivity : AppCompatActivity() {
 
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val user=Usuario(binding.inputMail.text.toString(),binding.inputPass.text.toString())
+        val regCall=RetrofitClient.apiRetrofit.signup(user)
+        val registro=this
+        regCall.enqueue(object : Callback<Unit>{
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
 
-        binding.btRegistrarse.setOnClickListener {
+            }
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                Log.d("respuesta: onResponse", response.toString())
+                if (response.code()>299 || response.code()<200){
+                    Toast.makeText(registro, "Error, no se ha podido crear el usuario", Toast.LENGTH_SHORT)
+                        .show()
+                }else{
+                    Toast.makeText(registro, "Usuario creado correctamente", Toast.LENGTH_SHORT)
+                        .show()
+                    binding.btRegistrarse.setOnClickListener {
+                        onBackPressed()
+                    }
+                }
+            }
+        }
+        )
+/*        binding.btRegistrarse.setOnClickListener {
             //volver al login
 
             //share preferences
-            if (comprobarDatos()) {
+     *//*       if (comprobarDatos()) {
                 val mail = binding.inputMail.text.toString()
                 val pass = binding.inputPass.text.toString()
                 preferences.guardar(mail, pass)
                 onBackPressed()
-            }
+            }*//*
 
-        }
+        }*/
     }
 
     private fun validarEmail(email: String): Boolean {

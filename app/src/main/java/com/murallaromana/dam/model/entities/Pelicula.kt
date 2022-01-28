@@ -4,9 +4,10 @@ import java.io.Serializable
 import com.google.gson.annotations.SerializedName
 
 data class Pelicula(
-    var puntuacion: String,
-    var director: String,
+    @SerializedName("rating")  var puntuacion: String,
+    @SerializedName("directorFirstname") var director: String,
     @SerializedName("title") var titulo: String,
-    var genero: String,
-    var url: String,
+    @SerializedName("genre") var genero: String,
+    @SerializedName("imageUrl") var url: String,
+    @SerializedName("runtimeMinutes") var minutos:Int
 ) : Serializable

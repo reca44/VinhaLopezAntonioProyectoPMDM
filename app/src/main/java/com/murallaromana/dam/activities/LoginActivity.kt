@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.murallaromana.dam.RetrofitClient
 import com.murallaromana.dam.databinding.ActivityLoginBinding
 import com.murallaromana.dam.model.data.SharePreferences
-import com.murallaromana.dam.model.entities.Pelicula
 import com.murallaromana.dam.model.entities.Token
 import com.murallaromana.dam.model.entities.Usuario
 import retrofit2.Call
@@ -28,8 +27,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-        val u = Usuario("mi@email.com","1234")
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val u = Usuario(binding.inputUsuario.text.toString(),binding.inputPass.text.toString())
         val loginCall= RetrofitClient.apiRetrofit.login(u)
         val login=this
         loginCall.enqueue(object : Callback<Token>{
@@ -40,19 +40,20 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Token>, response: Response<Token>) {
                 Log.d("respuesta: onResponse", response.toString())
                 if (response.code()>299 || response.code()<200){
-                    Toast.makeText(login, "Error, no se ha podido crear el usuario", Toast.LENGTH_SHORT)
+                    Toast.makeText(login, "Error, no se ha podido loguear el usuario", Toast.LENGTH_SHORT)
                         .show()
                 }else{
                     val token=response.body()?.token
                     Log.d("respuesta: token:", token.orEmpty())
-                    Toast.makeText(login, "Usuario creado correctamente", Toast.LENGTH_SHORT)
+                    Toast.makeText(login, "Usuario Logeado", Toast.LENGTH_SHORT)
                         .show()
+                    preferences.guardartoken(token)
+                    val intent = Intent(login, ListaPeliculasActivity::class.java)
                 }
             }})
         title = "Login"
        // preferences = SharePreferences(applicationContext)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
         binding.btIniciar.setOnClickListener {
           //  val usuario = preferences.recuperar("email")
             //val pass = preferences.recuperar("pass")
@@ -62,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
             } else if (!pass.equals(binding.inputPass.text.toString().trim())) {
                 binding.inputPass.error = "Contraseña incorrecta"
             } else {*/
-                val intent = Intent(this, ListaPeliculasActivity::class.java)
+
                 startActivity(intent)
            // }
         }

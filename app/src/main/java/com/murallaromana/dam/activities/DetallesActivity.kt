@@ -52,6 +52,7 @@ class DetallesActivity : AppCompatActivity() {
             binding.tvTituloDetalle.setText(infoPelicula.titulo)
             binding.tvUrl.setText(infoPelicula.url)
             binding.tNota.setText(infoPelicula.puntuacion)
+            binding.tMinutos.setText(infoPelicula.minutos.toString())
             Picasso.get().load(infoPelicula.url).into(binding.tvImagen)
         } else {
             title = "nueva pelicula"
@@ -60,6 +61,7 @@ class DetallesActivity : AppCompatActivity() {
             binding.tGenero.isEnabled = true
             binding.tNota.isEnabled = true
             binding.tDirector.isEnabled = true
+            binding.tMinutos.isEnabled=true
             Picasso.get()
                 .load("https://png.pngtree.com/png-vector/20190728/ourlarge/pngtree-avatar-user-profile-flat-color-icon-vector-icon-banner-png-image_1619399.jpg")
                 .into(binding.tvImagen)
@@ -104,6 +106,7 @@ class DetallesActivity : AppCompatActivity() {
                 binding.tGenero.isEnabled = true
                 binding.tNota.isEnabled = true
                 binding.tDirector.isEnabled = true
+                binding.tMinutos.isEnabled=true
                 Toast.makeText(this, "Pantalla de edición", Toast.LENGTH_SHORT).show()
                 itemGuardar?.isVisible = true
                 itemEditar?.isVisible = false
@@ -133,7 +136,7 @@ class DetallesActivity : AppCompatActivity() {
                         .isEmpty() || binding.tDirector.text.toString().isEmpty()
                     || binding.tvTituloDetalle.text.toString()
                         .isEmpty() || binding.tGenero.text.toString()
-                        .isEmpty() || binding.tvUrl.text.toString().isEmpty()
+                        .isEmpty() || binding.tvUrl.text.toString().isEmpty()|| binding.tMinutos.text.toString().isEmpty()
                 ) {
                     if (binding.tvTituloDetalle.text.toString().isEmpty()) {
                         binding.tvTituloDetalle.error = "El campo titulo no puede estar vacio"
@@ -151,6 +154,9 @@ class DetallesActivity : AppCompatActivity() {
                     if (binding.tvUrl.text.toString().isEmpty()) {
                         binding.tvUrl.error = "El campo URL no puede estar vacio"
                     }
+                    if (binding.tMinutos.text.toString().toInt()<=0) {
+                        binding.tMinutos.error = "El campo Minutos no puede ser 0"
+                    }
                 } else if (binding.tNota.text.toString().toDouble() > 10) {
                     binding.tNota.error = "La nota tiene que estar entre 0 y 10"
                 } else {
@@ -159,8 +165,9 @@ class DetallesActivity : AppCompatActivity() {
                         binding.tDirector.text.toString(),
                         binding.tvTituloDetalle.text.toString(),
                         binding.tGenero.text.toString(),
-                        binding.tvUrl.text.toString()
-                    )
+                        binding.tvUrl.text.toString(),
+                        binding.tMinutos.text.toString().toInt()
+                        )
                     if (intent.extras?.get("pelicula") == null) {
                         peliculas.add(peliculaCreada)
                     } else {

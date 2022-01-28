@@ -2,6 +2,7 @@ package com.murallaromana.dam.model.data
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.edit
 
 class SharePreferences(val context: Context) {
     private val archivoSP = "SharedPreferences"
@@ -21,5 +22,12 @@ class SharePreferences(val context: Context) {
             return preferences.getString("pass", null)
         }
         return null
+    }
+    fun guardartoken(token: String?) {
+        preferences.edit{
+            clear()
+            putString("token",token)
+            commit()
+        }
     }
 }

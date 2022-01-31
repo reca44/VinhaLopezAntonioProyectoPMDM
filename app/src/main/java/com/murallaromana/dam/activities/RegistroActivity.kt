@@ -27,10 +27,15 @@ class RegistroActivity : AppCompatActivity() {
 
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btRegistrarse.setOnClickListener {
+            if (comprobarDatos()) {
+                onBackPressed()
+
         val user=Usuario(binding.inputMail.text.toString(),binding.inputPass.text.toString())
         val regCall=RetrofitClient.apiRetrofit.signup(user)
         val registro=this
         regCall.enqueue(object : Callback<Unit>{
+
             override fun onFailure(call: Call<Unit>, t: Throwable) {
 
             }
@@ -42,16 +47,13 @@ class RegistroActivity : AppCompatActivity() {
                 }else{
                     Toast.makeText(registro, "Usuario creado correctamente", Toast.LENGTH_SHORT)
                         .show()
-                    binding.btRegistrarse.setOnClickListener {
-                        onBackPressed()
-                    }
+
                 }
             }
         }
-        )
-/*        binding.btRegistrarse.setOnClickListener {
-            //volver al login
 
+        )}
+/*
             //share preferences
      *//*       if (comprobarDatos()) {
                 val mail = binding.inputMail.text.toString()
@@ -61,7 +63,7 @@ class RegistroActivity : AppCompatActivity() {
             }*//*
 
         }*/
-    }
+    }}
 
     private fun validarEmail(email: String): Boolean {
         val pattern: Pattern = Patterns.EMAIL_ADDRESS

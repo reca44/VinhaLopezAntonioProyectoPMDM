@@ -37,7 +37,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:startIconDrawable="@drawable/mail"
-        app:startIconTint="@color/purple_500">
+        app:startIconTint="@color/miColorPrimario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputUsuario"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLUsuario"
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/candadopass"
-        app:startIconTint="@color/purple_500">
+        app:startIconTint="@color/miColorPrimario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPass"

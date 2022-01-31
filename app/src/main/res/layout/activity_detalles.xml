@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:clickable="true"
-            app:backgroundTint="@color/purple_500"
+            app:backgroundTint="@color/miColorSecundario"
             app:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/textDirector"
             app:layout_constraintStart_toEndOf="@+id/textDirector"

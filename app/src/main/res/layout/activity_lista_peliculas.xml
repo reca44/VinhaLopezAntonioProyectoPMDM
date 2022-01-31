@@ -21,13 +21,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:backgroundTint="@color/purple_500"
-        app:fabSize="mini"
+        app:backgroundTint="@color/miColorSecundario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add"
+        app:srcCompat="@drawable/anhadir"
         app:tint="@color/white"
         android:contentDescription="@string/boton_llamar"
-        android:focusable="true" />
+        android:focusable="true"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

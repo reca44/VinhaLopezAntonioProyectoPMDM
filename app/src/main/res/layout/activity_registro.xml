@@ -35,7 +35,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/ecaFilms"
         app:startIconDrawable="@drawable/ic_baseline_person_24"
-        app:startIconTint="@color/purple_500">
+        app:startIconTint="@color/miColorPrimario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputUsuario"
@@ -54,7 +54,7 @@
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/candadopass"
         android:layout_marginTop="@dimen/margen_activity_default_vertical"
-        app:startIconTint="@color/purple_500">
+        app:startIconTint="@color/miColorPrimario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPass"
@@ -78,7 +78,7 @@
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/candadopass"
         android:layout_marginTop="@dimen/margen_activity_default_vertical"
-        app:startIconTint="@color/purple_500">
+        app:startIconTint="@color/miColorPrimario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputpass2"
@@ -107,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="@+id/textIUsuario"
         app:layout_constraintTop_toBottomOf="@+id/textIUsuario"
         app:startIconDrawable="@drawable/mail"
-        app:startIconTint="@color/design_default_color_primary">
+        app:startIconTint="@color/miColorPrimario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputMail"
@@ -131,7 +131,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textIpass2"
         app:startIconDrawable="@drawable/telefono"
         android:layout_marginTop="@dimen/margen_activity_default_vertical"
-        app:startIconTint="@color/purple_500">
+        app:startIconTint="@color/miColorPrimario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputTelefono"

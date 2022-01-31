@@ -29,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btIniciar.setOnClickListener {
+        preferences = SharePreferences(applicationContext)
         val u = Usuario(binding.inputUsuario.text.toString(),binding.inputPass.text.toString())
         val loginCall= RetrofitClient.apiRetrofit.login(u)
         val login=this
@@ -49,12 +51,13 @@ class LoginActivity : AppCompatActivity() {
                         .show()
                     preferences.guardartoken(token)
                     val intent = Intent(login, ListaPeliculasActivity::class.java)
+                    startActivity(intent)
                 }
             }})
         title = "Login"
-       // preferences = SharePreferences(applicationContext)
 
-        binding.btIniciar.setOnClickListener {
+
+
           //  val usuario = preferences.recuperar("email")
             //val pass = preferences.recuperar("pass")
 
@@ -64,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
                 binding.inputPass.error = "Contraseña incorrecta"
             } else {*/
 
-                startActivity(intent)
+
            // }
         }
         binding.Registrarse.setOnClickListener {

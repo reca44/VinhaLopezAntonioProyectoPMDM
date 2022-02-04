@@ -4,16 +4,25 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.murallaromana.dam.R
 import com.murallaromana.dam.App.Companion.peliculas
+import com.murallaromana.dam.RetrofitClient
+import com.murallaromana.dam.adapters.ListaPeliculasAdapter
 import com.murallaromana.dam.databinding.ActivityDetallesBinding
+import com.murallaromana.dam.model.data.SharePreferences
 import com.murallaromana.dam.model.entities.Pelicula
 import com.squareup.picasso.Picasso
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.lang.Exception
 
 class DetallesActivity : AppCompatActivity() {
@@ -160,6 +169,9 @@ class DetallesActivity : AppCompatActivity() {
                 } else if (binding.tNota.text.toString().toDouble() > 10) {
                     binding.tNota.error = "La nota tiene que estar entre 0 y 10"
                 } else {
+                    val preferences = SharePreferences(applicationContext)
+                    val token =preferences.llamarToken("token")
+                    val context=this
                     val peliculaCreada = Pelicula(
                         binding.tNota.text.toString(),
                         binding.tDirector.text.toString(),
@@ -167,17 +179,32 @@ class DetallesActivity : AppCompatActivity() {
                         binding.tGenero.text.toString(),
                         binding.tvUrl.text.toString(),
                         binding.tMinutos.text.toString().toInt()
-                        )
-                    if (intent.extras?.get("pelicula") == null) {
-                        peliculas.add(peliculaCreada)
-                    } else {
-                        val indicePeli = peliculas.indexOf(infoPelicula)
-                        peliculas[indicePeli] = peliculaCreada
-                    }
-                    Toast.makeText(this, "Película Guardada", Toast.LENGTH_SHORT).show()
-                    finish()
+                    )
+                    val llamadaApi = RetrofitClient.apiRetrofit.create("Bearer $token",peliculaCreada)
+                    llamadaApi.enqueue(object : Callback<Unit> {
+                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
 
 
+
+                           // if (intent.extras?.get("pelicula") == null) {
+
+
+
+                                //peliculas.add(peliculaCreada)
+                            Toast.makeText(context, "Película Guardada", Toast.LENGTH_SHORT).show()
+                            finish()
+                           // } else {
+                             //   val indicePeli = peliculas.indexOf(infoPelicula)
+                               // peliculas[indicePeli] = peliculaCreada
+                            //}
+
+
+                        }
+
+                        override fun onFailure(call: Call<Unit>, t: Throwable) {
+                            Log.d("prueba",t.message.toString())
+                        }
+                    })
                 }
                 return true
             }

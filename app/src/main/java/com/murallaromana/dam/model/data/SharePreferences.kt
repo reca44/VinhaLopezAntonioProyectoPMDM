@@ -30,4 +30,7 @@ class SharePreferences(val context: Context) {
             commit()
         }
     }
+    fun llamarToken(token: String?): String? {
+        return preferences.getString("token",token)
+    }
 }

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Pelicula(
     @SerializedName("rating")  var puntuacion: String,
-    @SerializedName("directorFirstname") var director: String,
+    @SerializedName("directorFullname") var director: String,
     @SerializedName("title") var titulo: String,
     @SerializedName("genre") var genero: String,
     @SerializedName("imageUrl") var url: String,

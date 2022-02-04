@@ -37,10 +37,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
         //asociamos el recyclesview con sus componentes
 
-
-
-
-
         binding.fBoton.setOnClickListener{
             val intent = Intent(binding.root.context, DetallesActivity::class.java)
             startActivity(intent)
@@ -68,7 +64,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
                 binding.rvListaPeliculas.setHasFixedSize(true)
                 val divider = DividerItemDecoration(binding.rvListaPeliculas.context, layoutManager.orientation)
                 binding.rvListaPeliculas.addItemDecoration(divider)
-
             }
 
             override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {

@@ -14,6 +14,10 @@ interface Api {
     fun getMovies(@Header("Authorization") token: String): Call<List<Pelicula>>
 
     @POST("movies")
+    fun delete(@Header("Authorization") token:String ,
+               @Body id:String):Call<Unit>
+
+    @POST("movies")
     fun create(@Header("Authorization") token:String ,
                @Body peli:Pelicula):Call<Unit>
 

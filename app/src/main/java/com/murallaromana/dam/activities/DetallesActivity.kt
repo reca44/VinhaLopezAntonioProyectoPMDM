@@ -173,6 +173,7 @@ class DetallesActivity : AppCompatActivity() {
                     val token =preferences.llamarToken("token")
                     val context=this
                     val peliculaCreada = Pelicula(
+                        null,
                         binding.tNota.text.toString(),
                         binding.tDirector.text.toString(),
                         binding.tvTituloDetalle.text.toString(),

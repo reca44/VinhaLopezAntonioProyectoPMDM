@@ -29,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.inputUsuario.setText("prueba@gmail.com")
+        binding.inputPass.setText("1234")
         binding.btIniciar.setOnClickListener {
         preferences = SharePreferences(applicationContext)
         val u = Usuario(binding.inputUsuario.text.toString(),binding.inputPass.text.toString())

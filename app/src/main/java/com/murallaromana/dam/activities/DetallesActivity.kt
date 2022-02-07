@@ -35,6 +35,7 @@ class DetallesActivity : AppCompatActivity() {
         var itemEditar: MenuItem? = null
         var itemBorrar: MenuItem? = null
         var intemwhatsapp: MenuItem? = null
+        lateinit var infoPelicula: Pelicula
     }
 
 
@@ -52,17 +53,32 @@ class DetallesActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        if (intent.extras?.get("id") != null) {
+            val id = intent.extras?.get("id") as String
+            val preferences = SharePreferences(applicationContext)
+            val token =preferences.llamarToken("token")
+            if (id!=null){
+                val llamadaApi = RetrofitClient.apiRetrofit.getbyid("Bearer $token",id)
+                llamadaApi.enqueue(object : Callback<Pelicula> {
+                    override fun onResponse(call: Call<Pelicula>, response: Response<Pelicula>) {
+                        infoPelicula=response.body() as Pelicula
+                        title = infoPelicula.titulo
+                        binding.tGenero.setText(infoPelicula.genero)
+                        binding.tDirector.setText(infoPelicula.director)
+                        binding.tvTituloDetalle.setText(infoPelicula.titulo)
+                        binding.tvUrl.setText(infoPelicula.url)
+                        binding.tNota.setText(infoPelicula.puntuacion)
+                        binding.tMinutos.setText(infoPelicula.minutos.toString())
+                        Picasso.get().load(infoPelicula.url).into(binding.tvImagen)
+                    }
 
-        if (intent.extras?.get("pelicula") != null) {
-            infoPelicula = intent.extras?.get("pelicula") as Pelicula
-            title = infoPelicula.titulo
-            binding.tGenero.setText(infoPelicula.genero)
-            binding.tDirector.setText(infoPelicula.director)
-            binding.tvTituloDetalle.setText(infoPelicula.titulo)
-            binding.tvUrl.setText(infoPelicula.url)
-            binding.tNota.setText(infoPelicula.puntuacion)
-            binding.tMinutos.setText(infoPelicula.minutos.toString())
-            Picasso.get().load(infoPelicula.url).into(binding.tvImagen)
+                    override fun onFailure(call: Call<Pelicula>, t: Throwable) {
+                        Log.d("Fallo obtener id",t.message.toString())
+                    }
+                })
+            }
+
+
         } else {
             title = "nueva pelicula"
             binding.tvTituloDetalle.isEnabled = true
@@ -90,7 +106,7 @@ class DetallesActivity : AppCompatActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-        if (intent.extras?.get("pelicula") != null) {
+        if (intent.extras?.get("id") != null) {
             itemEditar?.isVisible = true
             itemGuardar?.isVisible = false
             itemBorrar?.isVisible = true
@@ -169,9 +185,11 @@ class DetallesActivity : AppCompatActivity() {
                 } else if (binding.tNota.text.toString().toDouble() > 10) {
                     binding.tNota.error = "La nota tiene que estar entre 0 y 10"
                 } else {
+
                     val preferences = SharePreferences(applicationContext)
                     val token =preferences.llamarToken("token")
                     val context=this
+
                     val peliculaCreada = Pelicula(
                         null,
                         binding.tNota.text.toString(),
@@ -184,22 +202,8 @@ class DetallesActivity : AppCompatActivity() {
                     val llamadaApi = RetrofitClient.apiRetrofit.create("Bearer $token",peliculaCreada)
                     llamadaApi.enqueue(object : Callback<Unit> {
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-
-
-
-                           // if (intent.extras?.get("pelicula") == null) {
-
-
-
-                                //peliculas.add(peliculaCreada)
                             Toast.makeText(context, "Película Guardada", Toast.LENGTH_SHORT).show()
                             finish()
-                           // } else {
-                             //   val indicePeli = peliculas.indexOf(infoPelicula)
-                               // peliculas[indicePeli] = peliculaCreada
-                            //}
-
-
                         }
 
                         override fun onFailure(call: Call<Unit>, t: Throwable) {
@@ -208,6 +212,12 @@ class DetallesActivity : AppCompatActivity() {
                     })
                 }
                 return true
+                // if (intent.extras?.get("pelicula") == null) {
+                // } else {
+                //   val indicePeli = peliculas.indexOf(infoPelicula)
+                // peliculas[indicePeli] = peliculaCreada
+                //}
+
             }
             R.id.action_llamar -> {
                 try {

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.murallaromana.dam.App
 import com.murallaromana.dam.R
 import com.murallaromana.dam.activities.DetallesActivity
 import com.murallaromana.dam.model.entities.Pelicula
@@ -39,7 +40,8 @@ class ListaPeliculasAdapter(private val peliculas: List<Pelicula>,val context: C
 
        holder.itemView.setOnClickListener {
            val intent = Intent(holder.itemView.context, DetallesActivity::class.java)
-           intent.putExtra("pelicula",pelicula)
+           //intent.putExtra("pelicula",pelicula)
+           intent.putExtra("id", pelicula.id)
            holder.itemView.context.startActivity(intent)
        }
     }

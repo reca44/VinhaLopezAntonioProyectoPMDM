@@ -14,9 +14,9 @@ interface Api {
     fun getbyid(@Header("Authorization") token: String ,
                 @Path ("id") id:String):Call<Pelicula>
 
-    @POST("movies/{id}")
+    @DELETE("movies/{id}")
     fun delete(@Header("Authorization") token:String ,
-               @Path ("id") id:String):Call<Unit>
+               @Path ("id") id:String?):Call<Unit>
 
     @POST("movies")
     fun create(@Header("Authorization") token:String ,

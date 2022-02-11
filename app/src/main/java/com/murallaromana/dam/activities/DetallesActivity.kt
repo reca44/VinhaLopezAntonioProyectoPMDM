@@ -23,6 +23,7 @@ import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
 import java.lang.Exception
 
 class DetallesActivity : AppCompatActivity() {
@@ -35,9 +36,8 @@ class DetallesActivity : AppCompatActivity() {
         var itemEditar: MenuItem? = null
         var itemBorrar: MenuItem? = null
         var intemwhatsapp: MenuItem? = null
-        lateinit var infoPelicula: Pelicula
+        var id: String? = null
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,11 +54,11 @@ class DetallesActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         if (intent.extras?.get("id") != null) {
-            val id = intent.extras?.get("id") as String
+            id = intent.extras?.get("id") as String?
             val preferences = SharePreferences(applicationContext)
             val token =preferences.llamarToken("token")
-            if (id!=null){
-                val llamadaApi = RetrofitClient.apiRetrofit.getbyid("Bearer $token",id)
+            if (id != null){
+                val llamadaApi = RetrofitClient.apiRetrofit.getbyid("Bearer $token", id!!)
                 llamadaApi.enqueue(object : Callback<Pelicula> {
                     override fun onResponse(call: Call<Pelicula>, response: Response<Pelicula>) {
                         infoPelicula=response.body() as Pelicula
@@ -141,14 +141,27 @@ class DetallesActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_borrar -> {
-                Toast.makeText(this, "Pelicula borrada", Toast.LENGTH_SHORT).show()
                 val builder: AlertDialog.Builder = AlertDialog.Builder(this)
                 val dialog = builder.setTitle("Eliminar pelicula")
                     .setMessage("Estas a punto de eliminar la pelicula " + infoPelicula.titulo + ". ¿Estas seguro?.")
                     .setPositiveButton("Aceptar") { _, _ ->
-                        peliculas.remove(infoPelicula)
-                        Toast.makeText(this, "Película Borrada", Toast.LENGTH_SHORT).show()
-                        finish()
+                        val preferences = SharePreferences(applicationContext)
+                        val token =preferences.llamarToken("token")
+                        val context=this
+                        val llamadaApi = RetrofitClient.apiRetrofit.delete("Bearer $token",id)
+                        llamadaApi.enqueue(object : Callback<Unit> {
+                            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                                if (response.isSuccessful){
+                                    Toast.makeText(context, "Pelicula borrada", Toast.LENGTH_SHORT).show()
+                                    finish()
+                                }
+
+                            }
+
+                            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                                Log.d("Error al borrar",t.message.toString())
+                            }
+                        })
                     }
                     .setNegativeButton("Cancelar", null).create()
                 dialog.show()

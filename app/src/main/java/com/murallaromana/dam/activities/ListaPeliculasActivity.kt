@@ -46,9 +46,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        //val adapter=ListaPeliculasAdapter(peliculas , this)
-        //binding.rvListaPeliculas.adapter=adapter
-
         val preferences = SharePreferences(applicationContext)
 
         val context=this;
@@ -57,7 +54,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Pelicula>>, response: Response<List<Pelicula>>) {
                 val listaPeliculas= response.body()
                 val adapter= listaPeliculas?.let { ListaPeliculasAdapter(it,this@ListaPeliculasActivity) }
-                // Toast.makeText(context, response.body().toString(), Toast.LENGTH_SHORT).show()
                 binding.rvListaPeliculas.adapter=adapter
                 val layoutManager = LinearLayoutManager(context)
                 binding.rvListaPeliculas.layoutManager=layoutManager

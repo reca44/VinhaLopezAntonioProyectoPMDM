@@ -32,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
         binding.inputUsuario.setText("prueba@gmail.com")
         binding.inputPass.setText("1234")
         binding.btIniciar.setOnClickListener {
+        binding.btIniciar.isEnabled=false
         preferences = SharePreferences(applicationContext)
         val u = Usuario(binding.inputUsuario.text.toString(),binding.inputPass.text.toString())
         val loginCall= RetrofitClient.apiRetrofit.login(u)
@@ -78,4 +79,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
         }
+
+    override fun onResume() {
+        binding.btIniciar.isEnabled=true
+        super.onResume()
+    }
     }

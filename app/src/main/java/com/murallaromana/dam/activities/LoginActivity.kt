@@ -47,6 +47,9 @@ class LoginActivity : AppCompatActivity() {
                 if (response.code()>299 || response.code()<200){
                     Toast.makeText(login, "Error, no se ha podido loguear el usuario", Toast.LENGTH_SHORT)
                         .show()
+                    if (response.code()==401 || response.code()==500){
+                        binding.btIniciar.isEnabled=true
+                    }
                 }else{
                     val token=response.body()?.token
                     Log.d("respuesta: token:", token.orEmpty())

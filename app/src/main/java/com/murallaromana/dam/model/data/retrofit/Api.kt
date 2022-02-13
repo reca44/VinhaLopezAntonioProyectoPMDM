@@ -18,6 +18,11 @@ interface Api {
     fun delete(@Header("Authorization") token:String ,
                @Path ("id") id:String?):Call<Unit>
 
+    @PUT("movies")
+    fun editar(@Header("Authorization") token:String ,
+               @Body peli: Pelicula):Call<Unit>
+
+
     @POST("movies")
     fun create(@Header("Authorization") token:String ,
                @Body peli:Pelicula):Call<Unit>

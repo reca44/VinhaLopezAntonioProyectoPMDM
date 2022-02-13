@@ -203,33 +203,53 @@ class DetallesActivity : AppCompatActivity() {
                     val token =preferences.llamarToken("token")
                     val context=this
 
-                    val peliculaCreada = Pelicula(
-                        null,
-                        binding.tNota.text.toString(),
-                        binding.tDirector.text.toString(),
-                        binding.tvTituloDetalle.text.toString(),
-                        binding.tGenero.text.toString(),
-                        binding.tvUrl.text.toString(),
-                        binding.tMinutos.text.toString().toInt()
-                    )
-                    val llamadaApi = RetrofitClient.apiRetrofit.create("Bearer $token",peliculaCreada)
-                    llamadaApi.enqueue(object : Callback<Unit> {
+
+
+                    if(infoPelicula!=null){
+
+                        val updatePelicula=Pelicula(infoPelicula?.id,
+                                                    binding.tNota.text.toString(),
+                                                    binding.tDirector.text.toString(),
+                                                    binding.tvTituloDetalle.text.toString(),
+                                                    binding.tGenero.text.toString(),
+                                                    binding.tvUrl.text.toString(),
+                                                    binding.tMinutos.text.toString().toInt())
+                    val llamadaApi=RetrofitClient.apiRetrofit.editar("Bearer $token",updatePelicula)
+                    llamadaApi.enqueue(object: Callback<Unit>{
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                            Toast.makeText(context, "Película Guardada", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Película Actualizada", Toast.LENGTH_SHORT).show()
                             finish()
                         }
 
                         override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            Log.d("prueba",t.message.toString())
+                            Toast.makeText(context, "No se puede actualizar la pelicula", Toast.LENGTH_SHORT).show()
                         }
+
                     })
+                    }else{
+                        val peliculaCreada = Pelicula(
+                            null,
+                            binding.tNota.text.toString(),
+                            binding.tDirector.text.toString(),
+                            binding.tvTituloDetalle.text.toString(),
+                            binding.tGenero.text.toString(),
+                            binding.tvUrl.text.toString(),
+                            binding.tMinutos.text.toString().toInt()
+                        )
+                        val llamadaApi = RetrofitClient.apiRetrofit.create("Bearer $token",peliculaCreada)
+                        llamadaApi.enqueue(object : Callback<Unit> {
+                            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                                Toast.makeText(context, "Película Guardada", Toast.LENGTH_SHORT).show()
+                                finish()
+                            }
+
+                            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                                Log.d("prueba",t.message.toString())
+                            }
+                        })
+                    }
                 }
                 return true
-                // if (intent.extras?.get("pelicula") == null) {
-                // } else {
-                //   val indicePeli = peliculas.indexOf(infoPelicula)
-                // peliculas[indicePeli] = peliculaCreada
-                //}
 
             }
             R.id.action_llamar -> {

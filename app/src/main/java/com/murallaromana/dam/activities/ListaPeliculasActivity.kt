@@ -115,6 +115,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
                 }
                 .setNegativeButton("Cancelar", null).create()
             dialog.show()
+            return true
         } else {
             return super.onOptionsItemSelected(item)
         }

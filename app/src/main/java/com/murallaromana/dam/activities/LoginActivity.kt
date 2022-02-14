@@ -66,8 +66,8 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(login, "Usuario Logeado", Toast.LENGTH_SHORT)
                         .show()
                     preferences.guardartoken(token)
-                    //val intent = Intent(login, ListaPeliculasActivity::class.java)
-                    //startActivity(intent)
+                    val intent = Intent(login, ListaPeliculasActivity::class.java)
+                    startActivity(intent)
                 }
             }})
         title = "Login"

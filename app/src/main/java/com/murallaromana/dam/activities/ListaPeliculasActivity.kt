@@ -1,7 +1,6 @@
 package com.murallaromana.dam.activities
 
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +11,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murallaromana.dam.adapters.ListaPeliculasAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.murallaromana.dam.App.Companion.peliculas
 import com.murallaromana.dam.R
 import com.murallaromana.dam.RetrofitClient
 import com.murallaromana.dam.activities.LoginActivity.Companion.preferences
@@ -22,7 +20,7 @@ import com.murallaromana.dam.model.entities.Pelicula
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.prefs.Preferences
+
 
 
 class ListaPeliculasActivity : AppCompatActivity() {
@@ -40,15 +38,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
         binding = ActivityListaPeliculasBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        //obtenemos datos
-
-        //val listaPeliculas = peliculas
-        //creamos componentes
-
-        //val adapter = ListaPeliculasAdapter(listaPeliculas,this)
-
-        //asociamos el recyclesview con sus componentes
 
         binding.fBoton.setOnClickListener {
             val intent = Intent(binding.root.context, DetallesActivity::class.java)

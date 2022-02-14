@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.murallaromana.dam.App
 import com.murallaromana.dam.R
 import com.murallaromana.dam.activities.DetallesActivity
 import com.murallaromana.dam.model.entities.Pelicula

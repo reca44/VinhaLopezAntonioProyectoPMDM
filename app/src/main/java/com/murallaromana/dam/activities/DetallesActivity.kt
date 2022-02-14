@@ -10,12 +10,8 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.murallaromana.dam.R
-import com.murallaromana.dam.App.Companion.peliculas
 import com.murallaromana.dam.RetrofitClient
-import com.murallaromana.dam.adapters.ListaPeliculasAdapter
 import com.murallaromana.dam.databinding.ActivityDetallesBinding
 import com.murallaromana.dam.model.data.SharePreferences
 import com.murallaromana.dam.model.entities.Pelicula
@@ -23,7 +19,6 @@ import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
 import java.lang.Exception
 
 class DetallesActivity : AppCompatActivity() {

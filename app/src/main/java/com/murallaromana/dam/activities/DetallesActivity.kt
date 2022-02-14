@@ -253,7 +253,7 @@ class DetallesActivity : AppCompatActivity() {
                     intent.putExtra(
                         Intent.EXTRA_TEXT,
                         "Te recomiendo que veas la pelicula: " + binding.tvTituloDetalle.text.toString() + "." +
-                                "\n Registrate en la App RecaFilms para mas info: \n" + binding.tvUrl.text.toString()
+                                "\nRegistrate en la App RecaFilms para mas info: \n" + "https://mega.nz/file/Ms8UzJhS#djbt9HzyQFUJGAp44JrB97JRmGLWYIIpASFqCscxwvE"
                     )
                     intent.`package` = "com.whatsapp"
                     startActivity(intent)

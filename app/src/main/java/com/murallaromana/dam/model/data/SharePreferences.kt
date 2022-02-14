@@ -1,8 +1,11 @@
 package com.murallaromana.dam.model.data
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import com.murallaromana.dam.activities.LoginActivity
+import java.util.prefs.Preferences
 
 class SharePreferences(val context: Context) {
     private val archivoSP = "SharedPreferences"
@@ -32,5 +35,11 @@ class SharePreferences(val context: Context) {
     }
     fun llamarToken(token: String?): String? {
         return preferences.getString("token",token)
+    }
+    fun cerrarSesion(context: Context){
+        this.guardartoken("")
+        val intent = Intent(context, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        context.startActivity(intent)
     }
 }

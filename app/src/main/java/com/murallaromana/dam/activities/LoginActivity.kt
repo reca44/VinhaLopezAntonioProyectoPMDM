@@ -1,6 +1,7 @@
 package com.murallaromana.dam.activities
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,6 +20,7 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
+
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var preferences: SharePreferences
@@ -29,11 +31,19 @@ class LoginActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.inputUsuario.setText("prueba@gmail.com")
-        binding.inputPass.setText("1234")
+        preferences = SharePreferences(applicationContext)
+        if (!preferences.llamarToken("").isNullOrEmpty()){
+            val intent = Intent(this, ListaPeliculasActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+        //pruebas
+        //binding.inputUsuario.setText("prueba@gmail.com")
+        //binding.inputPass.setText("1234")
         binding.btIniciar.setOnClickListener {
         binding.btIniciar.isEnabled=false
-        preferences = SharePreferences(applicationContext)
+
         val u = Usuario(binding.inputUsuario.text.toString(),binding.inputPass.text.toString())
         val loginCall= RetrofitClient.apiRetrofit.login(u)
         val login=this
@@ -56,8 +66,8 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(login, "Usuario Logeado", Toast.LENGTH_SHORT)
                         .show()
                     preferences.guardartoken(token)
-                    val intent = Intent(login, ListaPeliculasActivity::class.java)
-                    startActivity(intent)
+                    //val intent = Intent(login, ListaPeliculasActivity::class.java)
+                    //startActivity(intent)
                 }
             }})
         title = "Login"

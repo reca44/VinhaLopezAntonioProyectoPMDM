@@ -163,6 +163,7 @@ class DetallesActivity : AppCompatActivity() {
                             }
                         })
                     }
+
                     .setNegativeButton("Cancelar", null).create()
                 dialog.show()
 

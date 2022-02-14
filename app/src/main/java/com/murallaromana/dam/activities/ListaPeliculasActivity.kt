@@ -70,8 +70,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
                 response: Response<List<Pelicula>>,
             ) {
                 val listaPeliculas = response.body()
-                val adapter =
-                    listaPeliculas?.let { ListaPeliculasAdapter(it, this@ListaPeliculasActivity) }
+                val adapter = listaPeliculas?.let { ListaPeliculasAdapter(it, this@ListaPeliculasActivity) }
 
                 if (response.code() > 299 || response.code() < 200) {
 

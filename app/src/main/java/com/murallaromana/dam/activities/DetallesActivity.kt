@@ -28,7 +28,7 @@ import java.lang.Exception
 
 class DetallesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetallesBinding
-    private lateinit var infoPelicula: Pelicula
+    private var infoPelicula : Pelicula?=null
 
     companion object {
 
@@ -61,15 +61,15 @@ class DetallesActivity : AppCompatActivity() {
                 val llamadaApi = RetrofitClient.apiRetrofit.getbyid("Bearer $token", id!!)
                 llamadaApi.enqueue(object : Callback<Pelicula> {
                     override fun onResponse(call: Call<Pelicula>, response: Response<Pelicula>) {
-                        infoPelicula=response.body() as Pelicula
-                        title = infoPelicula.titulo
-                        binding.tGenero.setText(infoPelicula.genero)
-                        binding.tDirector.setText(infoPelicula.director)
-                        binding.tvTituloDetalle.setText(infoPelicula.titulo)
-                        binding.tvUrl.setText(infoPelicula.url)
-                        binding.tNota.setText(infoPelicula.puntuacion)
-                        binding.tMinutos.setText(infoPelicula.minutos.toString())
-                        Picasso.get().load(infoPelicula.url).into(binding.tvImagen)
+                        infoPelicula=response.body()!!
+                        title = infoPelicula?.titulo
+                        binding.tGenero.setText(infoPelicula?.genero)
+                        binding.tDirector.setText(infoPelicula?.director)
+                        binding.tvTituloDetalle.setText(infoPelicula?.titulo)
+                        binding.tvUrl.setText(infoPelicula?.url)
+                        binding.tNota.setText(infoPelicula?.puntuacion)
+                        binding.tMinutos.setText(infoPelicula?.minutos.toString())
+                        Picasso.get().load(infoPelicula?.url).into(binding.tvImagen)
                     }
 
                     override fun onFailure(call: Call<Pelicula>, t: Throwable) {
@@ -143,7 +143,7 @@ class DetallesActivity : AppCompatActivity() {
             R.id.action_borrar -> {
                 val builder: AlertDialog.Builder = AlertDialog.Builder(this)
                 val dialog = builder.setTitle("Eliminar pelicula")
-                    .setMessage("Estas a punto de eliminar la pelicula " + infoPelicula.titulo + ". ¿Estas seguro?.")
+                    .setMessage("Estas a punto de eliminar la pelicula " + infoPelicula?.titulo + ". ¿Estas seguro?.")
                     .setPositiveButton("Aceptar") { _, _ ->
                         val preferences = SharePreferences(applicationContext)
                         val token =preferences.llamarToken("token")
@@ -198,16 +198,14 @@ class DetallesActivity : AppCompatActivity() {
                     }
                 } else if (binding.tNota.text.toString().toDouble() > 10) {
                     binding.tNota.error = "La nota tiene que estar entre 0 y 10"
+
                 } else {
 
                     val preferences = SharePreferences(applicationContext)
                     val token =preferences.llamarToken("token")
                     val context=this
 
-
-
-                    if(infoPelicula!=null){
-
+                    if(infoPelicula != null){
                         val updatePelicula=Pelicula(infoPelicula?.id,
                                                     binding.tNota.text.toString(),
                                                     binding.tDirector.text.toString(),
